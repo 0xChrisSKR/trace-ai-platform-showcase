@@ -6,4 +6,4 @@ TRACE AI Platform demonstrates:
 - Workflow design across skills, workspace, shared state, memory, review trails, policy, receipt, and infrastructure.
 - System integration thinking across product UI, runtime concepts, verification, and delivery.
 - Ability to direct AI-assisted implementation while retaining responsibility for architecture, review, and validation.
-- Ability to package private-origin work into a public-safe engineering showcase without exposing source code or deployment details.
+- Ability to explain private-origin platform work publicly without exposing source code or deployment details.

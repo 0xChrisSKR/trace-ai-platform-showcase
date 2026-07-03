@@ -2,9 +2,9 @@
 
 ![TRACE AI Platform cover](assets/screenshots/01-trace-ai-skills-tab.png)
 
-TRACE AI Platform is my public-facing AI workflow / runtime platform showcase. It demonstrates product and system design around AI workflows, skills, workspace, shared state, memory, review trails, policy, receipt, and infrastructure.
+TRACE AI Platform is where I collect my thinking about AI workflows, runtime state, review trails, skills, workspace design, and infrastructure.
 
-This public version explains architecture, interface direction, and technical decisions without exposing private source code, deployment details, private repositories, or secrets.
+I built this showcase because a serious AI product needs more than a prompt box. It needs continuity, state, review, permissions, and clear boundaries between human decisions and automated execution.
 
 ## One-line Positioning
 
@@ -16,7 +16,7 @@ AI products cannot stay as isolated chat boxes. Once AI is used in real work, th
 
 ## My Role
 
-I handled product direction, workflow design, platform architecture, interface planning, AI-assisted implementation direction, technical review, and public-safe GitHub packaging.
+I handled product direction, workflow design, platform architecture, interface planning, AI-assisted implementation direction, technical review, and GitHub packaging.
 
 ## What It Includes
 
@@ -41,6 +41,7 @@ I handled product direction, workflow design, platform architecture, interface p
 
 - Architecture: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - Public artifacts: [docs/PUBLIC_ARTIFACTS.md](docs/PUBLIC_ARTIFACTS.md)
+- Lessons learned: [docs/LESSONS_LEARNED.md](docs/LESSONS_LEARNED.md)
 - 104 summary: [docs/104_PROJECT_SUMMARY.md](docs/104_PROJECT_SUMMARY.md)
 - What this proves: [docs/WHAT_THIS_PROVES.md](docs/WHAT_THIS_PROVES.md)
 - What this does not claim: [docs/WHAT_THIS_DOES_NOT_CLAIM.md](docs/WHAT_THIS_DOES_NOT_CLAIM.md)
@@ -56,6 +57,13 @@ I handled product direction, workflow design, platform architecture, interface p
 TRACE AI Platform is the latest point in my product evolution: WorldPeace DAO -> C-Chain Infrastructure -> Immune RPC Gate -> TRACE ProofFeed -> TRACE AI Platform.
 
 It shows how earlier Web3, verification, and infrastructure work evolved into AI platform architecture.
+
+## What A Reviewer Can Verify
+
+- The product surface through screenshots.
+- The architecture through diagrams and docs.
+- The project scope through the claim boundary documents.
+- The portfolio relationship through the linked public repositories.
 
 ## What This Does Not Claim
 
