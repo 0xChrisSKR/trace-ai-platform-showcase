@@ -1,7 +1,10 @@
 # What This Does Not Claim
 
-- It does not claim public production users.
-- It does not claim revenue, customer adoption, uptime, latency, awards, or rankings.
-- It does not publish implementation details.
-- It does not claim that every line was manually typed by me.
-- It does not expose deployment, infrastructure, database, or proprietary implementation details.
+This showcase does not claim:
+
+- Public production users.
+- Revenue, customer adoption, uptime, latency, awards, or rankings.
+- Public release of private implementation details.
+- That every line of code was manually typed by me.
+- Exposure of deployment, infrastructure, database, secrets, or proprietary implementation details.
+- Production operation of the full private platform.
