@@ -1,5 +1,10 @@
 # TRACE AI Platform Showcase
 
+[![Portfolio](https://img.shields.io/badge/Portfolio-Chris%20Chuang-0f172a?style=flat-square)](https://github.com/0xChrisSKR)
+![Status](https://img.shields.io/badge/Status-Public%20Showcase-7c3aed?style=flat-square)
+![Focus](https://img.shields.io/badge/Focus-AI%20Workflow%20Platform-2563eb?style=flat-square)
+![Claims](https://img.shields.io/badge/Claims-Verifiable%20Only-16a34a?style=flat-square)
+
 ![TRACE AI Platform cover](assets/screenshots/01-trace-ai-skills-tab.png)
 
 TRACE AI Platform is where I collect my thinking about AI workflows, runtime state, review trails, skills, workspace design, and infrastructure.
@@ -26,7 +31,7 @@ I handled product direction, workflow design, platform architecture, interface p
 - Memory and review trail concepts
 - Policy and receipt concepts
 - Infrastructure and verification direction
-- Public-safe screenshots and architecture documentation
+- Screenshots and architecture documentation
 
 ## Tech Stack
 
@@ -41,6 +46,7 @@ I handled product direction, workflow design, platform architecture, interface p
 
 - Architecture: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - Public artifacts: [docs/PUBLIC_ARTIFACTS.md](docs/PUBLIC_ARTIFACTS.md)
+- Visual artifacts: [docs/SCREENSHOTS.md](docs/SCREENSHOTS.md)
 - Lessons learned: [docs/LESSONS_LEARNED.md](docs/LESSONS_LEARNED.md)
 - 104 summary: [docs/104_PROJECT_SUMMARY.md](docs/104_PROJECT_SUMMARY.md)
 - What this proves: [docs/WHAT_THIS_PROVES.md](docs/WHAT_THIS_PROVES.md)
@@ -57,6 +63,14 @@ I handled product direction, workflow design, platform architecture, interface p
 TRACE AI Platform is the latest point in my product evolution: WorldPeace DAO -> C-Chain Infrastructure -> Immune RPC Gate -> TRACE ProofFeed -> TRACE AI Platform.
 
 It shows how earlier Web3, verification, and infrastructure work evolved into AI platform architecture.
+
+## Portfolio Ecosystem
+
+- WorldPeace DAO: https://github.com/0xChrisSKR/worldpeace-dao-showcase
+- C-Chain: https://github.com/0xChrisSKR/cchain-system-showcase
+- Immune RPC Gate: https://github.com/0xChrisSKR/immune-rpc-gate
+- TRACE ProofFeed: https://github.com/TRACE-CChain-Labs/trace-prooffeed-solana-agent
+- TRACE AI Platform: this repository
 
 ## What A Reviewer Can Verify
 
