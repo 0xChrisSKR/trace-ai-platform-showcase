@@ -1,0 +1,7 @@
+flowchart LR
+  User["User request"] --> Workspace["Assistant / workspace UI"]
+  Workspace --> Router["AI workflow routing"]
+  Router --> State["Shared execution state"]
+  State --> Skills["Skill / capability boundary"]
+  Skills --> Review["Review trail"]
+  Review --> Product["Product surface"]

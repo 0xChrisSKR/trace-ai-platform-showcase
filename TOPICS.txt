@@ -1,0 +1,8 @@
+ai-platform
+ai-agents
+ai-workflows
+system-architecture
+product-engineering
+ai-assisted-development
+technical-validation
+portfolio

@@ -1,0 +1,1 @@
+Public-safe showcase of AI workflow orchestration, shared execution state, skill concepts, assistant/workspace UI, wallet-aware action boundaries, and technical validation.
