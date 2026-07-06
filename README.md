@@ -63,7 +63,7 @@ I handled product direction, workflow design, platform architecture, interface p
 - Performance notes: [docs/PERFORMANCE.md](docs/PERFORMANCE.md)
 - Security notes: [docs/SECURITY.md](docs/SECURITY.md)
 - Future work: [docs/FUTURE_WORK.md](docs/FUTURE_WORK.md)
-- Career mapping: [docs/CAREER_MAPPING.md](docs/CAREER_MAPPING.md)
+- Reviewer notes: [docs/CAREER_MAPPING.md](docs/CAREER_MAPPING.md)
 
 ## Local Deployment Preview
 
@@ -98,13 +98,10 @@ TRACE AI Platform is the latest point in my product evolution: WorldPeace DAO ->
 
 It shows how earlier Web3, verification, and infrastructure work evolved into AI platform architecture.
 
-## Portfolio Ecosystem
+## Related Projects
 
-- WorldPeace DAO: https://github.com/0xChrisSKR/worldpeace-dao-showcase
-- C-Chain: https://github.com/0xChrisSKR/cchain-system-showcase
-- Immune RPC Gate: https://github.com/0xChrisSKR/immune-rpc-gate
 - TRACE ProofFeed: https://github.com/TRACE-CChain-Labs/trace-prooffeed-solana-agent
-- TRACE AI Platform: this repository
+- Immune RPC Gate: https://github.com/0xChrisSKR/immune-rpc-gate
 - GO2 Agent Lab: https://github.com/0xChrisSKR/go2-agent-lab
 
 ## What A Reviewer Can Verify
@@ -116,4 +113,4 @@ It shows how earlier Web3, verification, and infrastructure work evolved into AI
 
 ## What This Does Not Claim
 
-This showcase does not claim public production users, revenue, uptime, latency, customer adoption, public private-source release, or that every line of code was manually typed by me.
+This is a public showcase, not a production-user claim. I am not claiming revenue, uptime, customer adoption, or that every line was manually typed by me.

@@ -35,7 +35,7 @@ Human operator -> Workspace UI -> Agent workflow -> Shared execution state -> Re
 
 ## Business Impact
 
-Shows the ability to turn AI workflow ideas into a coherent platform direction that can be evaluated by recruiters, engineering managers, and research reviewers.
+Shows that I can turn AI workflow ideas into a reviewable platform prototype with screenshots, diagrams, and clear public boundaries.
 
 ## Interview Talking Points
 
