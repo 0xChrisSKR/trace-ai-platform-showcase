@@ -105,6 +105,7 @@ It shows how earlier Web3, verification, and infrastructure work evolved into AI
 - Immune RPC Gate: https://github.com/0xChrisSKR/immune-rpc-gate
 - TRACE ProofFeed: https://github.com/TRACE-CChain-Labs/trace-prooffeed-solana-agent
 - TRACE AI Platform: this repository
+- GO2 Agent Lab (planned public repository): https://github.com/0xChrisSKR/go2-agent-lab
 
 ## What A Reviewer Can Verify
 
