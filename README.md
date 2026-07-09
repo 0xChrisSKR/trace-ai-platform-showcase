@@ -9,17 +9,19 @@
 
 ![TRACE AI Platform cover](assets/screenshots/01-trace-ai-skills-tab.png)
 
-TRACE AI Platform is where I collect my thinking about AI workflows, runtime state, review trails, skills, workspace design, and infrastructure.
+TRACE AI Platform is where I collect my thinking about chat-first AI agent systems, runtime state, review trails, skills, workspace design, and infrastructure.
 
-I built this showcase because a serious AI product needs more than a prompt box. It needs continuity, state, review, permissions, and clear boundaries between human decisions and automated execution.
+The current TRACE mainline direction is a Chat-first Agent OS. Conversation is the interface; planning, LangGraph runtime flow, capability routing, OSS kernels, skills, memory, proof, and receipts sit underneath it.
+
+This public showcase explains the direction without exposing private infrastructure, runtime code, deployment details, secrets, or RC1 internals. RC1 remains an integration lab, while the public c-chain.org site remains public/stable and should not be described as fully replaced.
 
 ## One-line Positioning
 
-AI workflow platform showcase for agent workflows, shared execution state, review trails, and system integration.
+Chat-first AI Agent OS showcase for conversation-led workflows, LangGraph-style orchestration, OSS kernel composition, shared execution state, review trails, and system integration.
 
 ## Problem
 
-AI products cannot stay as isolated chat boxes. Once AI is used in real work, the important questions become workflow continuity, state, reviewability, permissions, action boundaries, and trust.
+AI products should not become disconnected dashboards or isolated architecture pages. Once AI is used in real work, the important questions become how conversation turns into plans, how workflows execute, which capability is selected, how state is preserved, and how risky actions stay reviewable.
 
 ## My Role
 
@@ -28,6 +30,9 @@ I handled product direction, workflow design, platform architecture, interface p
 ## What It Includes
 
 - AI workflow design
+- Chat-first interface direction
+- Planner and LangGraph runtime direction
+- Capability Router / Kernel Composer direction
 - Skills and workspace concepts
 - Shared execution state
 - Memory and review trail concepts
@@ -38,6 +43,9 @@ I handled product direction, workflow design, platform architecture, interface p
 ## Tech Stack
 
 - AI agent workflow design
+- Chat-first Agent OS architecture
+- LangGraph runtime / planning direction
+- OSS kernel composition
 - TypeScript / Next.js product surface
 - Runtime architecture
 - Workspace UI planning
@@ -63,6 +71,7 @@ I handled product direction, workflow design, platform architecture, interface p
 - Performance notes: [docs/PERFORMANCE.md](docs/PERFORMANCE.md)
 - Security notes: [docs/SECURITY.md](docs/SECURITY.md)
 - Future work: [docs/FUTURE_WORK.md](docs/FUTURE_WORK.md)
+- Current mainline status: [docs/CURRENT_MAINLINE_STATUS.md](docs/CURRENT_MAINLINE_STATUS.md)
 - Reviewer notes: [docs/CAREER_MAPPING.md](docs/CAREER_MAPPING.md)
 
 ## Local Deployment Preview
@@ -96,7 +105,7 @@ The deployment preview is for repository review and portfolio evaluation. It doe
 
 TRACE AI Platform is the latest point in my product evolution: WorldPeace DAO -> C-Chain Infrastructure -> Immune RPC Gate -> TRACE ProofFeed -> TRACE AI Platform.
 
-It shows how earlier Web3, verification, and infrastructure work evolved into AI platform architecture.
+It shows how earlier Web3, verification, and infrastructure work evolved into a chat-first Agent OS direction that composes existing OSS kernels instead of rebuilding every capability from scratch.
 
 ## Related Projects
 
@@ -108,9 +117,10 @@ It shows how earlier Web3, verification, and infrastructure work evolved into AI
 
 - The product surface through screenshots.
 - The architecture through diagrams and docs.
+- The current mainline story through `docs/CURRENT_MAINLINE_STATUS.md`.
 - The project scope through the claim boundary documents.
 - The portfolio relationship through the linked public repositories.
 
 ## What This Does Not Claim
 
-This is a public showcase, not a production-user claim. I am not claiming revenue, uptime, customer adoption, or that every line was manually typed by me.
+This is a public showcase, not a production-user claim. I am not claiming revenue, uptime, customer adoption, finished trading execution, autonomous wallet mutation, production robotics deployment, or that every line was manually typed by me.
