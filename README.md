@@ -1,131 +1,160 @@
 # TRACE
 
 [![CI](https://github.com/0xChrisSKR/trace-ai-platform-showcase/actions/workflows/ci.yml/badge.svg)](https://github.com/0xChrisSKR/trace-ai-platform-showcase/actions/workflows/ci.yml)
-![Status](https://img.shields.io/badge/Status-RC%20candidate-f59e0b?style=flat-square)
-![Focus](https://img.shields.io/badge/Focus-AI%20adoption%20platform-2563eb?style=flat-square)
-![Claims](https://img.shields.io/badge/Claims-Source%20verified-16a34a?style=flat-square)
+![Release](https://img.shields.io/badge/Release-RC3D%20validated-22c55e?style=flat-square)
+![Focus](https://img.shields.io/badge/Focus-Persistent%20AI%20Workspace-3b82f6?style=flat-square)
+![Stack](https://img.shields.io/badge/Stack-TypeScript%20%7C%20Next.js-111827?style=flat-square)
 
-![TRACE product flow](assets/system-overview.png)
+![TRACE RC3D goal-first home](assets/screenshots/rc3d-goal-home-desktop.png)
 
-TRACE is an AI adoption platform in development. A user starts with a goal, works through conversation, and receives a result that stays connected to the same workspace, account, and execution history.
+## 1. Introduction
 
-This repository is the official public showcase. It contains product explanations, public-safe architecture, diagrams, and implementation status. It does not contain the private product source, credentials, deployment topology, or production configuration.
+TRACE is a persistent AI workspace for turning goals into organized, reviewable work. Instead of ending at a chat response, it connects a goal to the Apps, capabilities, permissions, memory, activity, and next actions needed to continue the work over time.
 
-**Last synchronized:** 2026-07-22 against the latest RC candidate source at `1a92fb01`.
+This repository is the public engineering showcase for TRACE. It contains product screenshots, public-safe architecture, release history, and technical decisions. The private implementation, credentials, deployment topology, and production configuration are intentionally excluded.
 
-## What TRACE Is
+**Validated source:** RC3D Workspace Engine at `28ee0684`, reviewed on 2026-07-22.
 
-TRACE is not another standalone AI agent. It is designed to help people adopt AI without first learning models, agents, registries, or workflow infrastructure.
+## 2. Why TRACE
 
-The current product loop is:
+AI adoption becomes difficult when users must choose models, assemble tools, manage prompts, reconnect context, and decide which outputs are trustworthy. TRACE moves that integration burden into the product:
+
+- Start with the outcome the user wants.
+- Recommend a suitable way to begin.
+- Show the Apps, connections, and permissions involved before setup.
+- Keep tasks, results, memory, and activity inside one workspace.
+- Resume or extend existing work instead of starting over.
+- Surface blockers when a required connection or approval is missing.
+
+## 3. Product Vision
+
+TRACE is designed as an AI adoption platform where people describe work in ordinary language and receive a durable workspace that can continue across sessions, Apps, and execution paths.
+
+The product is not positioned as a chatbot or a GPT wrapper. Conversation is the entry point; the workspace is the operating context.
+
+## 4. Core Features
+
+| Capability | What it gives the user | RC3D status |
+| --- | --- | --- |
+| Goal Engine | Interprets an outcome and recommends a suitable solution | Validated |
+| Persistent Workspace | Reopens or extends account-owned work without duplicating stores | Validated |
+| Apps | Packages recognizable work with lifecycle and readiness states | Validated |
+| Capabilities | Connects Apps to bounded execution paths | Validated foundation |
+| Permissions | Requires explicit confirmation before installation or change | Validated |
+| Connections | Shows connected, optional, or required resources | Validated projection |
+| Memory | Preserves starting context and reusable workspace knowledge | Validated workspace path |
+| Activity Timeline | Records workspace creation, extension, and recent progress | Validated |
+| Recommendations | Keeps a next step attached to the active workspace | Validated |
+| Responsive Product UI | Supports desktop and mobile product flows | UAT passed |
+
+Full detail: [Feature Matrix](docs/FEATURE_MATRIX.md)
+
+## 5. RC3D Workspace Engine
+
+RC3D closes the gap between a one-time AI response and continuing work.
+
+When a user selects a recommended solution, TRACE can create an account-owned workspace containing:
+
+- the original goal and workspace type;
+- the Apps and capabilities required for that goal;
+- starter tasks and saved results;
+- required or optional connections;
+- permission boundaries;
+- workspace memory and operating context;
+- recent activity and next-step recommendations.
+
+The engine can reopen an existing workspace or extend it with another solution while preserving the same owner and store. That continuity is the central RC3D contribution.
+
+Engineering validation completed for deployment, production build, TypeScript, acceptance, regression, desktop UAT, mobile UAT, authenticated UAT, and guest UAT. The repository retains a legacy ESLint baseline of 354 findings; RC3D introduced zero new lint errors.
+
+Technical review: [RC3D Workspace Engine](docs/RC3D_WORKSPACE_ENGINE.md)
+
+## 6. Product Architecture
+
+![TRACE RC3D system overview](assets/architecture/rc3d-system-overview.png)
+
+The recruiter-level product model is:
 
 ```text
-Describe a goal
-  -> work with TRACE in Chat
-  -> use an available App or connection
-  -> keep tasks and results in Workspace
-  -> review the result and execution history
-  -> continue later from the same context
+Goal
+  -> Workspace
+  -> Capabilities
+  -> Apps
+  -> Memory
+  -> Timeline
+  -> Recommendations
+  -> Execution
 ```
 
-The longer-term adoption flow adds automatic solution recommendation and configuration. Those steps remain roadmap work and are not presented here as complete.
+The implementation separates product experience, workspace state, orchestration, and execution boundaries. This allows the UI to stay goal-focused while the underlying system resolves Apps, permissions, connections, and runtime capabilities.
 
-## Current Product Surfaces
+Architecture review: [Product Architecture](docs/ARCHITECTURE.md)
 
-| Surface | What the user sees | Current source status |
-| --- | --- | --- |
-| Chat | A single place to describe work, clarify requirements, and receive results | Implemented in the RC candidate |
-| Workspace | Current work, tasks, active agent, artifacts, memory, and execution history | Implemented in the RC candidate |
-| Apps | Installed capabilities, connection requirements, setup state, and launch actions | Install, enable, bind, test, invoke, and remove lifecycle exists in the RC candidate |
-| Account | Identity, plan, permissions, connections, sessions, and safety boundaries | Implemented; some external connection flows still require RC validation |
+## 7. Screenshots
 
-The source candidate also contains bounded workflows for document analysis, research, market analysis, account-owned background work, and read-only financial context. Availability depends on account state, connection health, permissions, and deployment validation.
+### Goal-first product entry
 
-## Why It Exists
+![TRACE goal-first home](assets/screenshots/rc3d-goal-home-desktop.png)
 
-Most AI tools stop at an answer. Real work also needs context, external services, task state, approval boundaries, saved results, and a way to resume later.
+### Solution recommendation before workspace creation
 
-TRACE brings those pieces into one product flow:
+![TRACE company operations recommendation](assets/screenshots/rc3d-solution-recommendation-desktop.png)
 
-- Start from the work, not the tool setup.
-- Ask for one connection or approval only when the task requires it.
-- Keep the user's account as the owner of work and history.
-- Show blockers instead of reporting false success.
-- Preserve useful results as artifacts that can be reviewed and continued.
+The screenshots were captured from a production build of the validated RC3D commit. The product copy is shown in Traditional Chinese because that is the current verified interface.
 
-## Product Architecture
+## 8. Technical Highlights
 
-![TRACE architecture](assets/architecture.png)
+- **Persistent state model:** workspace profile, tasks, results, memory, context, activity, and recommendations share one account-owned workspace identity.
+- **Goal-first orchestration:** the Goal Engine resolves a solution before the system asks the user to install or configure anything.
+- **Manifest-based product layer:** Apps and Solutions declare the capabilities, resources, permissions, starter tasks, and workspace type they require.
+- **Safe extension:** an existing workspace can be continued or extended without creating a competing state store.
+- **Explicit failure boundaries:** missing devices, connections, permissions, or adapters return a blocker instead of simulated success.
+- **Hybrid AI boundary:** inference is treated as a replaceable account-owned resource; provider choice does not redefine workspace ownership or product flow.
+- **Responsive system:** desktop and mobile share the same product hierarchy and state model.
 
-The public architecture has four layers:
+## 9. AI Adoption
 
-1. **Product:** Chat, Workspace, Apps, and Account.
-2. **Orchestration:** intent understanding, workflow planning, capability selection, and approval gates.
-3. **Execution:** authorized Apps, connected services, document and data adapters, and bounded agent work.
-4. **Continuity:** workspace state, memory, artifacts, and execution history.
+TRACE treats AI adoption as a workflow design problem, not a model-selection problem. The system hides internal runtime vocabulary and presents a smaller set of user concepts: goal, recommendation, workspace, App, connection, task, result, and next step.
 
-Technical detail: [Architecture](docs/ARCHITECTURE.md)
+For enterprise use, this matters because AI work must remain understandable, permission-aware, and resumable even when the underlying model or execution provider changes.
 
-## Current Implementation Status
+More context: [AI Adoption Model](docs/AI_ADOPTION.md)
 
-### Implemented in the latest RC candidate
+## 10. Roadmap
 
-- Goal-led Chat and onboarding paths.
-- Account-owned Workspace continuity across messages, tasks, results, memory, and artifacts.
-- App Center with lifecycle and honest readiness states.
-- Bounded agent execution with visible blockers and approval boundaries.
-- Document ingestion for text, Markdown, CSV, TSV, images with OCR, and PDF.
-- Market-analysis and proof-recap task graphs.
-- Candidate integrations for scheduled research, Gmail work, Telegram channels, GitHub monitoring, portfolio monitoring, Taiwan market work, and a daily work brief.
+**Completed in RC3A-RC3D**
 
-### Still requiring validation or promotion
+- App product layer and safe package lifecycle.
+- Product experience and responsive design system.
+- Goal-first solution recommendation and setup preview.
+- Persistent workspace creation, reopening, and extension.
 
-- A clean RC build and promotion of the latest candidate.
-- Authenticated browser validation across first-use, refresh, reconnect, and account isolation.
-- End-to-end validation of every external App and background workflow.
-- Automatic solution recommendation and one-step workspace/App configuration.
-- Replacement of the current public site by the RC candidate.
+**Next validation direction**
 
-Detailed status: [Current implementation](docs/CURRENT_MAINLINE_STATUS.md)
+- Broaden solution coverage without weakening capability readiness checks.
+- Continue workspace state across more verified execution paths.
+- Consolidate hybrid inference and durable memory choices behind one product boundary.
+- Promote the validated experience only when public-site parity is confirmed.
 
-## Runtime Flow
+See [Release Showcase](docs/RELEASE_SHOWCASE.md) and [Roadmap](docs/ROADMAP.md).
 
-![TRACE runtime flow](assets/runtime.png)
+## 11. Future Vision
 
-A task is allowed to proceed only when the required account, connection, capability, and approval state can be resolved. Otherwise TRACE returns a clear setup step or blocker. High-consequence actions remain outside the current public claim.
+The long-term direction is a workspace that helps a person or organization adopt AI without turning every new use case into a separate integration project. Goals should remain connected to the context, permissions, tools, decisions, and results that produced them.
 
-## Technology
+The public claim remains conservative: RC3D is a validated release candidate and workspace architecture, not evidence of production users, audited security, autonomous financial execution, or completed robotics deployment.
 
-The current implementation uses TypeScript, Next.js, React, assistant-ui, LangGraph, CCXT, WalletConnect/Reown, AgentKit, Supabase, Prisma, and adapter-based integrations. Each technology serves a bounded role; the user-facing product does not require users to understand the underlying runtime vocabulary.
+## Project Navigation
+
+- [Portfolio Description](docs/PORTFOLIO.md)
+- [Feature Matrix](docs/FEATURE_MATRIX.md)
+- [RC3D Workspace Engine](docs/RC3D_WORKSPACE_ENGINE.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Release Showcase](docs/RELEASE_SHOWCASE.md)
+- [Current Status](docs/CURRENT_MAINLINE_STATUS.md)
+- [Screenshots](docs/SCREENSHOTS.md)
+- [Claim Boundary](docs/WHAT_THIS_DOES_NOT_CLAIM.md)
 
 ## My Role
 
-I define the product direction, user workflows, system boundaries, and public narrative. I use AI coding systems during implementation, then read, review, modify, test, and validate the result. I am responsible for deciding what is complete, what remains experimental, and what can be stated publicly.
-
-## What Can Be Reviewed Here
-
-- [Product](docs/PRODUCT.md)
-- [Why TRACE](docs/WHY_TRACE.md)
-- [AI adoption model](docs/AI_ADOPTION.md)
-- [Architecture](docs/ARCHITECTURE.md)
-- [Vision](docs/VISION.md)
-- [Roadmap](docs/ROADMAP.md)
-- [Synchronization report](docs/TRACE_SYNCHRONIZATION_REPORT.md)
-- [Implementation/showcase gaps](docs/GAP_REPORT.md)
-- [Screenshot status and capture checklist](docs/SCREENSHOTS.md)
-- [Engineering decisions](docs/ENGINEERING_DECISIONS.md)
-- [Claim boundary](docs/WHAT_THIS_DOES_NOT_CLAIM.md)
-
-## Public Demo
-
-The full TRACE RC candidate is not presented here as a public production deployment. [TRACE ProofFeed](https://trace-prooffeed.vercel.app) is a separate public demo of the verification direction that informed TRACE's reviewable-result model.
-
-## Related Projects
-
-- [TRACE ProofFeed](https://github.com/TRACE-CChain-Labs/trace-prooffeed-solana-agent)
-- [Immune RPC Gate](https://github.com/0xChrisSKR/immune-rpc-gate)
-- [GO2 Agent Lab](https://github.com/0xChrisSKR/go2-agent-lab)
-
-## Claim Boundary
-
-This showcase does not claim production users, revenue, production-scale uptime, completed autonomous trading, autonomous wallet mutation, payment activation, deployed GO2 control, or full public-site replacement. The latest code is an RC candidate and remains subject to build, deployment, and authenticated product validation.
+I define the product direction, user workflows, system boundaries, and release criteria. I use AI coding systems during implementation, then read, review, modify, test, and validate the result. I am responsible for deciding what is complete, what remains experimental, and what can be stated publicly.

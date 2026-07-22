@@ -1,1 +1,1 @@
-Public showcase for TRACE, an AI adoption platform that turns goals into app-assisted work, persistent workspaces, and reviewable results.
+Public showcase of TRACE RC3D, a persistent AI workspace for goal-driven execution, Apps, memory, recommendations, and hybrid AI systems.

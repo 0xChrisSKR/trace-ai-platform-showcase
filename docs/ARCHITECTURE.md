@@ -1,70 +1,86 @@
-# Architecture
+# Product Architecture
 
-TRACE is designed around a simple product promise: start with a goal, use the right connected capability, preserve the work, and make the result reviewable.
+TRACE separates the user experience from the implementation needed to execute and preserve work. The user starts with a goal; the system resolves the workspace, Apps, capabilities, connections, and permissions behind that goal.
 
-![TRACE architecture](../assets/architecture.png)
+![TRACE RC3D system overview](../assets/architecture/rc3d-system-overview.png)
+
+## Workspace Flow
+
+![TRACE RC3D workspace flow](../assets/architecture/rc3d-workspace-flow.png)
+
+```text
+Goal
+  -> Workspace
+  -> Capabilities
+  -> Apps
+  -> Memory
+  -> Timeline
+  -> Recommendations
+  -> Execution
+```
+
+This flow describes the durable product cycle:
+
+1. **Goal** defines the outcome and gives the system a reason to act.
+2. **Workspace** becomes the account-owned context for the goal.
+3. **Capabilities** identify the bounded operations required.
+4. **Apps** package those capabilities into work the user recognizes.
+5. **Memory** preserves useful context inside the workspace boundary.
+6. **Timeline** records creation, extension, progress, and results.
+7. **Recommendations** keep the next safe action visible.
+8. **Execution** advances the work only after required setup and permission checks pass.
 
 ## Product Layer
 
-| Surface | Responsibility |
-| --- | --- |
-| Chat | Capture intent, clarify requirements, show progress, and return results |
-| Workspace | Preserve current work, tasks, artifacts, memory, and history |
-| Apps | Show usable capabilities, connection requirements, and lifecycle state |
-| Account | Own identity, permissions, plans, sessions, and external connections |
+The product layer contains the goal-first home, solution recommendation, workspace views, App surfaces, and account controls. Internal terms such as registry, task graph, adapter, and provider routing are not required for normal use.
 
-The product is intentionally smaller than the underlying route inventory. Historical dashboards and implementation-oriented pages are not the default user journey.
+## Workspace Engine
+
+RC3D stores a workspace as one account-owned model containing:
+
+- workspace type, goal, title, and summary;
+- installed solution and App identifiers;
+- capability and resource references;
+- permissions and connection state;
+- tasks, results, and operating context;
+- memory records;
+- activity and recommendations.
+
+The engine supports three continuity decisions:
+
+- create a new workspace;
+- continue an existing workspace;
+- extend an existing workspace with another compatible solution.
+
+The validated RC3D regression confirms that reopening and extension do not create a second competing store.
 
 ## Orchestration Layer
 
-The implementation converts a conversation into bounded work through:
+The public-safe orchestration path is:
 
-1. Intent and entity understanding.
-2. Workflow planning and task-graph selection.
-3. Account, connection, and capability resolution.
-4. Human approval when a consequential action is requested.
-5. Adapter-based execution.
-6. Result, memory, artifact, and execution-history persistence.
+```text
+Goal Engine
+  -> Solution recommendation
+  -> Permission and connection review
+  -> App lifecycle
+  -> Workspace create / continue / extend
+  -> Bounded execution
+  -> Result, memory, activity, and next recommendation
+```
 
-LangGraph is used in the orchestration path. A Kernel Composer and capability routing layer coordinate workflows without exposing those implementation concepts in the primary UI.
+The Goal Engine selects from verified Solution manifests. The Solution control plane coordinates App preparation and workspace persistence. The capability runtime remains behind a stable boundary so a product workflow is not tied to one model or provider.
 
-## App And Integration Layer
+## Hybrid AI Boundary
 
-Apps represent work users recognize: document analysis, research, market analysis, Gmail work, Telegram channels, GitHub monitoring, portfolio review, wallet observation, and scheduled briefs.
+TRACE treats inference as a replaceable account-owned resource. A configured native, local, bring-your-own, or enterprise inference path can serve the same product contract without becoming the owner of workspace state.
 
-Each App may require one or more of the following:
-
-- An authenticated TRACE Account.
-- An external service connection.
-- A healthy data source or runtime adapter.
-- Explicit permission or approval.
-- A workspace where the result can be saved.
-
-Registry presence alone is not treated as a usable App.
-
-## Continuity Layer
-
-TRACE keeps four forms of continuity:
-
-- **Workspace:** the current task and conversation context.
-- **Memory:** reusable facts and preferences associated with the account.
-- **Artifacts:** outputs that can be opened and reused.
-- **Execution history:** a reviewable record of what happened and what was blocked.
-
-## Public-Safe Deployment View
-
-![TRACE deployment view](../assets/deployment.png)
-
-The public diagram intentionally shows service roles rather than hosts, IP addresses, process names, credentials, or private topology.
+RC3D validates the workspace and product boundary. It does not claim that every possible inference provider combination has completed production validation.
 
 ## Safety Invariants
 
-- The TRACE Account owns work; wallets and external services are replaceable connections.
-- Missing setup or unhealthy dependencies produce a visible blocker, not a success state.
-- Wallet and exchange analysis remain read-only unless a separate, approved execution path is explicitly validated.
-- Secrets and provider details are not displayed in public surfaces.
-- Candidate implementation is not described as deployed production behavior without promotion evidence.
-
-## Current Technology
-
-The inspected RC candidate includes TypeScript, Next.js, React, assistant-ui, LangGraph, CCXT, WalletConnect/Reown, AgentKit, Supabase, Prisma, structured schemas, and adapter-based service integrations.
+- The TRACE Account owns the workspace and its history.
+- External services and devices are replaceable connections, not workspace owners.
+- A missing connection, capability, permission, or healthy adapter produces an explicit blocker.
+- Workspace creation or extension requires user confirmation when permissions are requested.
+- High-consequence actions are outside the current public claim unless separately validated.
+- No private topology, credentials, account data, or implementation source is included here.

@@ -1,14 +1,11 @@
-# What This Does Not Claim
+# Public Claim Boundary
 
-The latest implementation is an RC candidate. This showcase does not claim:
+RC3D is a validated release candidate. This showcase does not claim:
 
-- That the candidate is the current public production build.
-- That every source-implemented App has passed authenticated browser UAT.
-- Automatic solution recommendation for every business goal.
-- Automatic trading, autonomous wallet mutation, signing, transfer, or custody.
-- Active payment processing.
-- Completed GO2 ROS2 integration or production robot control.
-- Production users, revenue, customer adoption, uptime, throughput, or audited security.
-- Public availability of the private implementation source.
-
-Historical work and research directions are described separately from current product capabilities.
+- public production users, revenue, adoption, uptime, throughput, or scale;
+- audited security, regulatory compliance, or formal enterprise certification;
+- that the validated RC3D build has replaced the current public site;
+- autonomous trading, wallet mutation, signing, transfer, or custody;
+- completed GO2 ROS2 integration, autonomous navigation, or production robotics deployment;
+- that every possible App, connection, or inference provider combination is production-validated;
+- public availability of the private implementation source.

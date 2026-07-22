@@ -1,10 +1,10 @@
 ai-platform
+ai-workspace
 ai-agents
 ai-adoption
-workflow-automation
-langgraph
+workflow-orchestration
+hybrid-ai
+enterprise-ai
 nextjs
 typescript
-human-in-the-loop
-system-architecture
-product-engineering
+system-design

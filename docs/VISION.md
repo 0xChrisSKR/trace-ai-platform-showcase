@@ -1,15 +1,16 @@
 # Vision
 
-TRACE aims to make advanced AI systems usable through ordinary work language.
+TRACE is moving toward a persistent AI workspace where a person or organization can adopt AI through the language of work rather than the language of infrastructure.
 
-A person should be able to describe what they need, understand the proposed next step, provide access only when required, receive a useful result, and return later without rebuilding the context.
+A goal should remain connected to:
 
-The product direction is broader than a single agent or assistant. TRACE is intended to coordinate Apps, data, workflows, memory, and review boundaries around the user's goal while hiding infrastructure complexity.
+- the workspace where it is being pursued;
+- the Apps and capabilities involved;
+- the connections and permissions granted;
+- the context the system should remember;
+- the activity and results already produced;
+- the next recommended action.
 
-The vision is constrained by three rules:
+The architectural direction is hybrid by design. Model and execution providers may change, but account ownership, workspace continuity, and review boundaries should remain stable.
 
-1. Work must remain understandable to the person who requested it.
-2. External access and consequential actions must remain explicit.
-3. Public claims must distinguish implemented source, validated RC behavior, and future direction.
-
-TRACE is still moving through that transition. The latest RC candidate has converged the product around Chat, Workspace, Apps, and Account. Automatic solution recommendation, complete App configuration, and public promotion remain work to be validated rather than finished claims.
+This vision is constrained by evidence. RC3D validates the current workspace model; broader Solution coverage, public promotion, and production-scale operation remain separate future gates.

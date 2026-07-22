@@ -1,1 +1,1 @@
-assets/system-overview.png
+assets/screenshots/rc3d-goal-home-desktop.png

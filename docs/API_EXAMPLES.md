@@ -22,16 +22,15 @@ Architecture:
 curl -L "https://raw.githubusercontent.com/0xChrisSKR/trace-ai-platform-showcase/master/docs/ARCHITECTURE.md"
 ```
 
-## RC Candidate Interface Families
+## Validated RC3D Interface Families
 
-Source inspection confirms internal RC candidate interfaces for:
+The validated RC3D implementation contains internal interfaces for:
 
-- Conversation runtime.
-- Current workspace and conversation recovery.
-- Artifacts and execution history.
-- App catalog and install/enable/bind/test/invoke/remove lifecycle.
-- Active agent status and bounded execution.
-- Account connections and readiness.
-- Background work and automations.
+- Goal recommendation and Solution selection.
+- Solution installation and permission review.
+- Current workspace creation, reopening, and extension.
+- Tasks, results, memory, context, activity, and recommendations.
+- App catalog and lifecycle.
+- Capability and connection readiness.
 
 Route names, request bodies, and response contracts are not published here as a stable external API. They remain implementation interfaces until versioning, authentication, deployment, and public support boundaries are defined.

@@ -5,32 +5,22 @@
 |-- README.md
 |-- LICENSE
 |-- CONTRIBUTING.md
-|-- Dockerfile
-|-- docker-compose.yml
 |-- assets/
-|   |-- system-overview.png
-|   |-- architecture.png
-|   |-- runtime.png
-|   |-- deployment.png
-|   |-- diagrams/
-|   `-- screenshots/
-|       `-- README.md
+|   |-- screenshots/
+|   |-- architecture/
+|   `-- release/
 |-- docs/
+|   |-- PORTFOLIO.md
 |   |-- PRODUCT.md
-|   |-- WHY_TRACE.md
-|   |-- AI_ADOPTION.md
-|   |-- VISION.md
-|   |-- ROADMAP.md
 |   |-- ARCHITECTURE.md
+|   |-- RC3D_WORKSPACE_ENGINE.md
+|   |-- FEATURE_MATRIX.md
+|   |-- RELEASE_SHOWCASE.md
 |   |-- CURRENT_MAINLINE_STATUS.md
-|   |-- TRACE_SYNCHRONIZATION_REPORT.md
-|   |-- GAP_REPORT.md
+|   |-- AI_ADOPTION.md
+|   |-- ROADMAP.md
 |   |-- SCREENSHOTS.md
-|   |-- ENGINEERING_DECISIONS.md
-|   |-- ENGINEERING_NOTES.md
-|   |-- SECURITY.md
-|   |-- WHAT_THIS_PROVES.md
-|   `-- WHAT_THIS_DOES_NOT_CLAIM.md
+|   `-- SECURITY.md
 |-- tools/
 |   `-- validate-repository.mjs
 `-- .github/
@@ -40,4 +30,4 @@
     `-- ISSUE_TEMPLATE/
 ```
 
-This is a documentation and architecture showcase. The private TRACE implementation is intentionally not mirrored into this repository.
+This is a public engineering showcase. The private TRACE implementation is intentionally not mirrored into this repository.

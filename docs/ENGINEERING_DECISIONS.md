@@ -1,29 +1,37 @@
 # Engineering Decisions
 
-## Make Work The Product Boundary
+## Begin With The Goal
 
-The primary product surfaces are Chat, Workspace, Apps, and Account. Historical dashboards and runtime pages remain implementation or owner concerns rather than default navigation.
+The product home asks what the user wants to accomplish. Solution and App selection happen after the goal is understood, so infrastructure choices do not become the first product decision.
+
+## Make Workspace The Continuity Boundary
+
+Conversation is an entry point, but the workspace owns continuing work. Tasks, results, memory, context, activity, recommendations, Apps, capabilities, and resource references remain connected to one account-owned workspace identity.
+
+## Extend The Existing Store
+
+RC3D extends the existing workspace store instead of introducing a new database or parallel product. The release regression verifies persist, reopen, and extend behavior without duplicate stores.
 
 ## Keep Account Ownership Separate From Connections
 
-The TRACE Account owns work, memory, artifacts, and history. Wallets, exchanges, Gmail, Telegram, GitHub, and other services are replaceable connections. Disconnecting a service should not change the owner of previous work.
+The TRACE Account owns the workspace. External services, devices, wallets, and inference providers remain replaceable connections or resources. Replacing a provider must not replace the owner of previous work.
 
-## Treat Apps As Outcomes, Not Metadata
+## Treat Apps As Usable Work, Not Registry Metadata
 
-An App is usable only when its account, connection, adapter, permission, and persistence path are resolvable. A registry entry or source file does not qualify as a completed capability.
+An App must resolve its capabilities, resources, permissions, and persistence path. A manifest or source file alone does not qualify as a completed user workflow.
 
-## Preserve Work Before Expanding Autonomy
+## Preview Before Change
 
-The candidate prioritizes workspace continuity, artifacts, memory, and execution history before higher-consequence automation. This makes failures inspectable and follow-up work possible.
+The recommendation surface shows the proposed workspace, starter tasks, Apps, required resources, and permissions before installation. Confirmation remains a product boundary, not an implementation detail.
 
-## Stop At Explicit Boundaries
+## Fail With A Blocker
 
-Missing connections, unhealthy providers, permission requirements, and consequential actions produce visible blockers or approval requests. The product must not convert uncertainty into a success message.
+Missing connections, devices, permissions, or healthy adapters return a visible setup requirement. The product does not convert incomplete execution into a success state.
 
-## Compose Existing Kernels
+## Keep Hybrid AI Behind One Contract
 
-TRACE uses established libraries and adapters where they already solve the underlying problem: assistant-ui for conversation UI, LangGraph for workflow orchestration, CCXT for market abstraction, WalletConnect/Reown for wallet sessions, and AgentKit for approval-gated execution boundaries.
+Inference is an account-owned resource behind the product workflow. Native, local, bring-your-own, and enterprise providers can be changed without redefining workspace ownership or user navigation.
 
-## Separate Candidate Code From Deployment Claims
+## Separate Validation From Production Adoption
 
-Source implementation, automated tests, RC promotion, authenticated browser UAT, and public production are different evidence levels. Public copy names the level being described.
+RC3D passed release-candidate engineering validation. That result is reported separately from public-site promotion, production users, scale, and audited-security claims.

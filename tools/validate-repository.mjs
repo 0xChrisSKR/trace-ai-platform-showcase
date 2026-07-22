@@ -16,6 +16,7 @@ const requiredRoot = [
   '.github/ISSUE_TEMPLATE/engineering-review.md'
 ];
 const requiredDocs = [
+  'PORTFOLIO.md',
   'PRODUCT.md',
   'WHY_TRACE.md',
   'AI_ADOPTION.md',
@@ -23,30 +24,28 @@ const requiredDocs = [
   'ROADMAP.md',
   'ARCHITECTURE.md',
   'CURRENT_MAINLINE_STATUS.md',
-  'TRACE_SYNCHRONIZATION_REPORT.md',
-  'GAP_REPORT.md',
+  'RC3D_WORKSPACE_ENGINE.md',
+  'FEATURE_MATRIX.md',
+  'RELEASE_SHOWCASE.md',
   'SCREENSHOTS.md',
   'API_EXAMPLES.md',
   'FOLDER_STRUCTURE.md',
   'ENGINEERING_DECISIONS.md',
-  'ENGINEERING_NOTES.md',
   'PERFORMANCE.md',
   'SECURITY.md',
-  'FUTURE_WORK.md',
-  'CAREER_MAPPING.md'
+  'WHAT_THIS_PROVES.md',
+  'WHAT_THIS_DOES_NOT_CLAIM.md'
 ];
 const requiredAssets = [
-  'system-overview.png',
-  'architecture.png',
-  'runtime.png',
-  'deployment.png'
-];
-
-const requiredDiagramSources = [
-  'product-flow.svg',
-  'architecture.svg',
-  'runtime.svg',
-  'deployment.svg'
+  'screenshots/rc3d-goal-home-desktop.png',
+  'screenshots/rc3d-solution-recommendation-desktop.png',
+  'screenshots/rc3d-goal-home-mobile.png',
+  'architecture/rc3d-system-overview.svg',
+  'architecture/rc3d-system-overview.png',
+  'architecture/rc3d-workspace-flow.svg',
+  'architecture/rc3d-workspace-flow.png',
+  'release/rc3-release-timeline.svg',
+  'release/rc3-release-timeline.png'
 ];
 
 let failed = false;
@@ -60,7 +59,6 @@ function requireFile(relativePath) {
 for (const file of requiredRoot) requireFile(file);
 for (const file of requiredDocs) requireFile(path.join('docs', file));
 for (const file of requiredAssets) requireFile(path.join('assets', file));
-for (const file of requiredDiagramSources) requireFile(path.join('assets', 'diagrams', file));
 
 const forbiddenFileNames = ['.env', 'id_rsa', 'id_ed25519'];
 function walk(dir) {
@@ -80,6 +78,10 @@ function walk(dir) {
       const text = fs.readFileSync(full, 'utf8');
       const forbidden = [
         /C:[\\/]/i,
+        /\/Users\/trace/i,
+        /10\.8\.\d{1,3}\.\d{1,3}/,
+        /192\.168\.\d{1,3}\.\d{1,3}/,
+        /\.ssh[\\/]/i,
         /BEGIN (RSA|OPENSSH|PRIVATE) KEY/i,
         /private[_-]?key\s*[:=]/i,
         /secret\s*[:=]\s*['"][A-Za-z0-9_.-]{12,}['"]/i,

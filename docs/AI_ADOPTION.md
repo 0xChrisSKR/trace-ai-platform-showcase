@@ -1,39 +1,33 @@
 # AI Adoption Model
 
-TRACE treats AI adoption as a product workflow, not a model-selection exercise.
+TRACE treats AI adoption as a product and systems-integration problem.
 
 ## Adoption Path
 
 ```text
 Goal
-  -> guided conversation
-  -> suitable work path
-  -> required Apps and connections
-  -> configured Workspace
+  -> recommended Solution
+  -> visible Apps, resources, and permissions
+  -> persistent Workspace
   -> bounded execution
-  -> saved result and history
+  -> saved result, memory, activity, and next step
 ```
 
-## What Exists In The Current Candidate
+## What RC3D Validates
 
-- Goal-led Chat and onboarding.
-- Work-path selection for several implemented task types.
-- Workspace persistence for conversation, tasks, results, memory, and artifacts.
-- App Center with lifecycle, readiness, and connection states.
-- Account-level ownership and permission boundaries.
-- Bounded execution with explicit blockers and approvals.
+- A user can begin with an outcome instead of selecting a model or tool.
+- A Solution can describe the Apps, capabilities, resources, permissions, and starter work it needs.
+- The setup remains a preview until the user confirms it.
+- The resulting workspace can be reopened or extended.
+- Work state remains owned by the TRACE Account rather than an external provider.
+- Guest and authenticated behavior are separated and validated.
 
-## What Remains In Development
+## Hybrid AI
 
-- General solution recommendation across open-ended business goals.
-- Automatic assembly of a complete workspace from a recommended solution.
-- One-step installation and configuration across every App and connector.
-- A uniform acceptance standard across every background workflow.
+The underlying architecture treats inference as a replaceable resource. Native, local, bring-your-own, and enterprise inference paths can serve the same product contract without owning the workspace.
 
-## Design Principle
+RC3D validates the product and workspace boundary. It does not claim that every inference provider combination has completed production validation.
 
-The user should understand the work being done, not the internal machinery used to do it. Planner, runtime graph, capability registry, manifests, provider routing, and persistence adapters remain implementation details unless a technical reviewer opens the architecture documentation.
+## Enterprise Relevance
 
-## Adoption Without Overclaiming
-
-An App is described as available only when the relevant account, connection, adapter, permission, and persistence path can be resolved. Source code or registry metadata alone is not treated as a completed user capability.
+Organizations need more than model access. They need clear ownership, permission boundaries, continuity, connection state, understandable blockers, and a stable place for results. RC3D brings those concerns into one workspace model.

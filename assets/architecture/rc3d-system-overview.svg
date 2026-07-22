@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">TRACE RC3D system overview</title>
+  <desc id="desc">Four-layer architecture showing goal-first product experience, persistent workspace, orchestration, and bounded execution.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0 L12 6 L0 12 Z" fill="#70e1a1"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="#080a0f"/>
+  <circle cx="1460" cy="110" r="180" fill="#10251c" opacity="0.42"/>
+  <circle cx="110" cy="790" r="170" fill="#101c2b" opacity="0.38"/>
+
+  <text x="80" y="76" fill="#70e1a1" font-family="Arial, sans-serif" font-size="18" font-weight="700">TRACE RC3D</text>
+  <text x="80" y="124" fill="#f7f8fa" font-family="Arial, sans-serif" font-size="38" font-weight="700">Persistent AI Workspace Architecture</text>
+  <text x="80" y="158" fill="#9ba3b0" font-family="Arial, sans-serif" font-size="18">Goal-driven product experience with durable state, explicit permissions, and bounded execution</text>
+
+  <g filter="url(#shadow)">
+    <rect x="80" y="205" width="1440" height="128" rx="18" fill="#101319" stroke="#28303b"/>
+    <rect x="80" y="353" width="1440" height="174" rx="18" fill="#101319" stroke="#28303b"/>
+    <rect x="80" y="547" width="1440" height="118" rx="18" fill="#101319" stroke="#28303b"/>
+    <rect x="80" y="685" width="1440" height="118" rx="18" fill="#101319" stroke="#28303b"/>
+  </g>
+
+  <text x="112" y="238" fill="#70e1a1" font-family="Arial, sans-serif" font-size="15" font-weight="700">PRODUCT EXPERIENCE</text>
+  <text x="112" y="275" fill="#f7f8fa" font-family="Arial, sans-serif" font-size="22" font-weight="700">Goal Input</text>
+  <line x1="292" y1="270" x2="405" y2="270" stroke="#70e1a1" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="438" y="275" fill="#f7f8fa" font-family="Arial, sans-serif" font-size="22" font-weight="700">Solution Recommendation</text>
+  <line x1="735" y1="270" x2="850" y2="270" stroke="#70e1a1" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="884" y="275" fill="#f7f8fa" font-family="Arial, sans-serif" font-size="22" font-weight="700">Permission Review</text>
+  <line x1="1100" y1="270" x2="1215" y2="270" stroke="#70e1a1" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="1250" y="275" fill="#f7f8fa" font-family="Arial, sans-serif" font-size="22" font-weight="700">Continue Work</text>
+
+  <text x="112" y="386" fill="#70e1a1" font-family="Arial, sans-serif" font-size="15" font-weight="700">RC3D WORKSPACE ENGINE</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="112" y="412" width="242" height="82" rx="12" fill="#151a22" stroke="#3d4959"/>
+    <text x="136" y="446" fill="#f7f8fa" font-size="18" font-weight="700">Workspace Profile</text>
+    <text x="136" y="475" fill="#9ba3b0" font-size="14">Goal, type, owner, status</text>
+
+    <rect x="376" y="412" width="242" height="82" rx="12" fill="#151a22" stroke="#3d4959"/>
+    <text x="400" y="446" fill="#f7f8fa" font-size="18" font-weight="700">Tasks &amp; Results</text>
+    <text x="400" y="475" fill="#9ba3b0" font-size="14">Current work and outputs</text>
+
+    <rect x="640" y="412" width="242" height="82" rx="12" fill="#151a22" stroke="#3d4959"/>
+    <text x="664" y="446" fill="#f7f8fa" font-size="18" font-weight="700">Apps &amp; Connections</text>
+    <text x="664" y="475" fill="#9ba3b0" font-size="14">Available and required resources</text>
+
+    <rect x="904" y="412" width="242" height="82" rx="12" fill="#151a22" stroke="#3d4959"/>
+    <text x="928" y="446" fill="#f7f8fa" font-size="18" font-weight="700">Memory &amp; Context</text>
+    <text x="928" y="475" fill="#9ba3b0" font-size="14">Reusable workspace knowledge</text>
+
+    <rect x="1168" y="412" width="320" height="82" rx="12" fill="#151a22" stroke="#3d4959"/>
+    <text x="1192" y="446" fill="#f7f8fa" font-size="18" font-weight="700">Activity &amp; Recommendations</text>
+    <text x="1192" y="475" fill="#9ba3b0" font-size="14">Progress history and next safe step</text>
+  </g>
+
+  <text x="112" y="580" fill="#63a9ff" font-family="Arial, sans-serif" font-size="15" font-weight="700">ORCHESTRATION</text>
+  <text x="112" y="625" fill="#f7f8fa" font-family="Arial, sans-serif" font-size="20" font-weight="700">Goal Engine</text>
+  <line x1="265" y1="619" x2="430" y2="619" stroke="#63a9ff" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="465" y="625" fill="#f7f8fa" font-family="Arial, sans-serif" font-size="20" font-weight="700">Solution Control Plane</text>
+  <line x1="704" y1="619" x2="870" y2="619" stroke="#63a9ff" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="905" y="625" fill="#f7f8fa" font-family="Arial, sans-serif" font-size="20" font-weight="700">App Control Plane</text>
+  <line x1="1095" y1="619" x2="1260" y2="619" stroke="#63a9ff" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="1295" y="625" fill="#f7f8fa" font-family="Arial, sans-serif" font-size="20" font-weight="700">Workspace Store</text>
+
+  <text x="112" y="718" fill="#f3b95f" font-family="Arial, sans-serif" font-size="15" font-weight="700">BOUNDED EXECUTION</text>
+  <text x="112" y="764" fill="#f7f8fa" font-family="Arial, sans-serif" font-size="20" font-weight="700">Capabilities</text>
+  <line x1="250" y1="758" x2="430" y2="758" stroke="#f3b95f" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="465" y="764" fill="#f7f8fa" font-family="Arial, sans-serif" font-size="20" font-weight="700">Hybrid Inference</text>
+  <line x1="645" y1="758" x2="825" y2="758" stroke="#f3b95f" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="860" y="764" fill="#f7f8fa" font-family="Arial, sans-serif" font-size="20" font-weight="700">Approved Services</text>
+  <line x1="1050" y1="758" x2="1230" y2="758" stroke="#f3b95f" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="1265" y="764" fill="#f7f8fa" font-family="Arial, sans-serif" font-size="20" font-weight="700">Reviewable Result</text>
+
+  <text x="800" y="854" text-anchor="middle" fill="#9ba3b0" font-family="Arial, sans-serif" font-size="16">Account-owned state  •  explicit blockers  •  resumable work  •  no provider owns the workspace</text>
+</svg>
