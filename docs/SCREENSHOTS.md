@@ -1,20 +1,27 @@
-# Visual Artifacts
+# Screenshots
 
-This repository uses screenshots and diagrams to make the platform direction understandable without publishing private source code.
+These screenshots were captured from a production build of validated RC3D commit `28ee0684`. No private account data, credentials, or infrastructure details are shown.
 
-## Screenshots
+## 1. Goal-first Home
 
-- `assets/screenshots/01-trace-ai-skills-tab.png` - skills and workflow surface
-- `assets/screenshots/02-trace-ai-profile-list.png` - AI profile / workspace surface
-- `assets/screenshots/03-trace-workspace-terminal.png` - workspace terminal surface
+![TRACE RC3D goal-first home](../assets/screenshots/rc3d-goal-home-desktop.png)
 
-## Architecture
+The user begins with an outcome. TRACE presents verified Solution starting points without asking the user to choose a model, planner, registry, or runtime.
 
-- `assets/diagrams/architecture.svg`
-- `assets/diagrams/architecture.mmd`
+## 2. Solution Recommendation
 
-## Visual Standard
+![TRACE RC3D company operations recommendation](../assets/screenshots/rc3d-solution-recommendation-desktop.png)
 
-- Use full product surfaces when possible.
-- Avoid terminal-only evidence unless it explains a workflow.
-- Keep screenshots free of secrets, private endpoints, local paths, and private repo names.
+Before workspace creation, the user can review the proposed workspace, starter tasks, Apps, resources, and permissions.
+
+## 3. Mobile Product View
+
+[Open the RC3D mobile capture](../assets/screenshots/rc3d-goal-home-mobile.png)
+
+The mobile capture is retained as responsive UAT evidence. The two desktop images are the recommended recruiter-facing screenshots.
+
+## Recommended Order
+
+1. `rc3d-goal-home-desktop.png`
+2. `rc3d-solution-recommendation-desktop.png`
+3. `rc3d-goal-home-mobile.png`

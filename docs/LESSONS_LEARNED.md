@@ -1,17 +1,21 @@
 # Lessons Learned
 
-## AI products need workflow design, not only model access
+## Product Convergence Is Architecture Work
 
-The hardest part is not calling a model. The harder problem is keeping the user's work understandable across multiple steps: what happened, what changed, what is pending review, and what still needs a human decision.
+Removing product concepts can be harder than adding them. TRACE accumulated dashboards, agents, skills, market tools, and runtime pages. Converging them into Chat, Workspace, Apps, and Account required ownership and workflow decisions, not only navigation changes.
 
-## Shared state is a product feature
+## A Conversation Needs Durable Work State
 
-When a workflow crosses tools, screens, and assistant actions, shared execution state becomes part of the user experience. If state is unclear, the product feels unreliable even when the underlying model works.
+Chat is useful for intent, but a multi-step task also needs tasks, artifacts, memory, and history. Without that continuity, the user receives answers but does not gain a reliable work system.
 
-## Review trails matter before scale
+## Capability Metadata Is Not Product Readiness
 
-For AI systems, reviewability should be designed early. A reviewer should be able to understand why an action exists, what system state it depends on, and what boundary prevents unsafe execution.
+A capability becomes useful only when its connection, adapter, permission, execution, and persistence path work together. Showing a card too early creates false confidence.
 
-## Public packaging has to be selective
+## Honest Blockers Improve The Product
 
-Some platform work cannot be exposed as source code. This repository keeps the public parts useful by showing screenshots, architecture, decisions, and claim boundaries without publishing private implementation details.
+A clear setup requirement or failure state is more useful than a polished success message that is not backed by execution. This principle applies to external services, approvals, payments, wallets, and deployment status.
+
+## Public Documentation Must Track Evidence Level
+
+Source code, tests, candidate builds, RC validation, and production use are different evidence levels. Keeping them separate makes the public story more credible and makes future synchronization easier.

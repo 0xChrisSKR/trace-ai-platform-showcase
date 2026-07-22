@@ -1,18 +1,12 @@
 # Performance
 
-This repository does not claim benchmark numbers unless a public benchmark artifact is linked.
+No latency, throughput, uptime, user-volume, or production-scale metric is claimed by this showcase.
 
-## Current Performance Posture
+RC3D completed production build, TypeScript, acceptance, regression, desktop, mobile, authenticated, and guest validation. The current public performance boundary remains intentionally narrow:
 
-- CI runs build, lint, and typecheck when project scripts are available.
-- Static showcase repositories are designed for fast review and simple Docker preview.
-- Public demo repositories should be reviewed through the linked live demo when available.
-- No latency, throughput, uptime, user volume, or production-scale claim is made here.
+- No latency or throughput number is published without a reproducible benchmark.
+- No production uptime or scale claim is inferred from release-candidate validation.
+- Functional validation and responsive UAT are reported separately from performance.
+- The known legacy ESLint baseline is not represented as a runtime performance result.
 
-## What To Measure Next
-
-- Build time in CI.
-- Lighthouse score for public demo surfaces where a live URL exists.
-- API response behavior for public endpoints where a live API exists.
-- Docker image size and cold-start review time.
-- Diagram and screenshot load quality inside GitHub README.
+Performance numbers should be added only with a reproducible benchmark that identifies the RC3D or later commit, environment class, dataset, test procedure, and limitations.

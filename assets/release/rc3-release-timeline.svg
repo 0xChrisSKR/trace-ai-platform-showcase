@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="720" viewBox="0 0 1600 720" role="img" aria-labelledby="title desc">
+  <title id="title">TRACE RC3 release timeline</title>
+  <desc id="desc">Timeline from RC3A App product layer through RC3D Persistent Workspace Engine.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0 L12 6 L0 12 Z" fill="#70e1a1"/>
+    </marker>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.34"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="720" fill="#080a0f"/>
+  <text x="80" y="82" fill="#70e1a1" font-family="Arial, sans-serif" font-size="18" font-weight="700">TRACE RELEASE PROGRESSION</text>
+  <text x="80" y="132" fill="#f7f8fa" font-family="Arial, sans-serif" font-size="40" font-weight="700">RC3A to RC3D</text>
+  <text x="80" y="170" fill="#9ba3b0" font-family="Arial, sans-serif" font-size="18">Four implementation milestones that moved TRACE from Apps to persistent workspaces</text>
+
+  <line x1="185" y1="286" x2="1415" y2="286" stroke="#2c3541" stroke-width="5" marker-end="url(#arrow)"/>
+  <g filter="url(#shadow)" font-family="Arial, sans-serif">
+    <rect x="80" y="230" width="330" height="360" rx="18" fill="#11151c" stroke="#355442"/>
+    <circle cx="185" cy="286" r="14" fill="#70e1a1"/>
+    <text x="112" y="346" fill="#70e1a1" font-size="17" font-weight="700">RC3A  •  0e9471f4</text>
+    <text x="112" y="393" fill="#f7f8fa" font-size="27" font-weight="700">App Product Layer</text>
+    <text x="112" y="435" fill="#9ba3b0" font-size="16">Apps become the product-facing</text>
+    <text x="112" y="460" fill="#9ba3b0" font-size="16">layer above capabilities.</text>
+    <text x="112" y="512" fill="#f7f8fa" font-size="16">• Manifests and catalog</text>
+    <text x="112" y="541" fill="#f7f8fa" font-size="16">• Lifecycle and setup states</text>
+
+    <rect x="450" y="230" width="330" height="360" rx="18" fill="#11151c" stroke="#3b4f6a"/>
+    <circle cx="555" cy="286" r="14" fill="#63a9ff"/>
+    <text x="482" y="346" fill="#63a9ff" font-size="17" font-weight="700">RC3B  •  2b71488a</text>
+    <text x="482" y="393" fill="#f7f8fa" font-size="27" font-weight="700">Product Experience</text>
+    <text x="482" y="435" fill="#9ba3b0" font-size="16">A coherent responsive interface</text>
+    <text x="482" y="460" fill="#9ba3b0" font-size="16">replaces technical-first surfaces.</text>
+    <text x="482" y="512" fill="#f7f8fa" font-size="16">• Shared product system</text>
+    <text x="482" y="541" fill="#f7f8fa" font-size="16">• Installation progress</text>
+
+    <rect x="820" y="230" width="330" height="360" rx="18" fill="#11151c" stroke="#66552f"/>
+    <circle cx="925" cy="286" r="14" fill="#f3b95f"/>
+    <text x="852" y="346" fill="#f3b95f" font-size="17" font-weight="700">RC3C  •  b804a040</text>
+    <text x="852" y="393" fill="#f7f8fa" font-size="27" font-weight="700">Goal-first Orchestration</text>
+    <text x="852" y="435" fill="#9ba3b0" font-size="16">Goals resolve to Solutions before</text>
+    <text x="852" y="460" fill="#9ba3b0" font-size="16">the user configures infrastructure.</text>
+    <text x="852" y="512" fill="#f7f8fa" font-size="16">• Solution recommendation</text>
+    <text x="852" y="541" fill="#f7f8fa" font-size="16">• Resources and permissions</text>
+
+    <rect x="1190" y="230" width="330" height="360" rx="18" fill="#11151c" stroke="#355442"/>
+    <circle cx="1295" cy="286" r="14" fill="#70e1a1"/>
+    <text x="1222" y="346" fill="#70e1a1" font-size="17" font-weight="700">RC3D  •  28ee0684</text>
+    <text x="1222" y="393" fill="#f7f8fa" font-size="27" font-weight="700">Workspace Engine</text>
+    <text x="1222" y="435" fill="#9ba3b0" font-size="16">Workspaces persist, reopen, and</text>
+    <text x="1222" y="460" fill="#9ba3b0" font-size="16">extend without duplicate stores.</text>
+    <text x="1222" y="512" fill="#f7f8fa" font-size="16">• Durable account ownership</text>
+    <text x="1222" y="541" fill="#f7f8fa" font-size="16">• Tasks, memory, activity</text>
+  </g>
+
+  <text x="800" y="654" text-anchor="middle" fill="#9ba3b0" font-family="Arial, sans-serif" font-size="16">RC3D validation: deployment, production build, TypeScript, acceptance, regression, desktop, mobile, authenticated, and guest UAT</text>
+</svg>

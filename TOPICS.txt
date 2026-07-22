@@ -1,8 +1,10 @@
 ai-platform
+ai-workspace
 ai-agents
-ai-workflows
-system-architecture
-product-engineering
-ai-assisted-development
-technical-validation
-portfolio
+ai-adoption
+workflow-orchestration
+hybrid-ai
+enterprise-ai
+nextjs
+typescript
+system-design

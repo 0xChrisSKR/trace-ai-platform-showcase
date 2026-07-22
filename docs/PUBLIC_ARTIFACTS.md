@@ -1,20 +1,32 @@
 # Public Artifacts
 
-Public artifacts available in this repository:
+## Product
 
-- README overview: `README.md`
-- Architecture documentation: `docs/ARCHITECTURE.md`
-- Engineering decisions: `docs/ENGINEERING_DECISIONS.md`
-- Visual artifact guide: `docs/SCREENSHOTS.md`
-- Lessons learned: `docs/LESSONS_LEARNED.md`
-- What this proves: `docs/WHAT_THIS_PROVES.md`
-- What this does not claim: `docs/WHAT_THIS_DOES_NOT_CLAIM.md`
-- Screenshots:
-  - `assets/screenshots/01-trace-ai-skills-tab.png`
-  - `assets/screenshots/02-trace-ai-profile-list.png`
-  - `assets/screenshots/03-trace-workspace-terminal.png`
-- Architecture diagrams:
-  - `assets/diagrams/architecture.svg`
-  - `assets/diagrams/architecture.mmd`
+- `README.md`
+- `docs/PORTFOLIO.md`
+- `docs/PRODUCT.md`
+- `docs/WHY_TRACE.md`
+- `docs/AI_ADOPTION.md`
+- `docs/VISION.md`
+- `docs/ROADMAP.md`
 
-No private source code, environment files, private deployment details, internal IPs, private RPC endpoints, or secrets are included.
+## Engineering
+
+- `docs/ARCHITECTURE.md`
+- `docs/RC3D_WORKSPACE_ENGINE.md`
+- `docs/FEATURE_MATRIX.md`
+- `docs/RELEASE_SHOWCASE.md`
+- `docs/CURRENT_MAINLINE_STATUS.md`
+- `docs/ENGINEERING_DECISIONS.md`
+- `docs/SECURITY.md`
+
+## Visuals
+
+- `assets/screenshots/rc3d-goal-home-desktop.png`
+- `assets/screenshots/rc3d-solution-recommendation-desktop.png`
+- `assets/screenshots/rc3d-goal-home-mobile.png`
+- `assets/architecture/rc3d-system-overview.png`
+- `assets/architecture/rc3d-workspace-flow.png`
+- `assets/release/rc3-release-timeline.png`
+
+No private implementation source, environment files, credentials, private endpoints, hostnames, IP addresses, or deployment topology are included.

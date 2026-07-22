@@ -16,19 +16,36 @@ const requiredRoot = [
   '.github/ISSUE_TEMPLATE/engineering-review.md'
 ];
 const requiredDocs = [
+  'PORTFOLIO.md',
+  'PRODUCT.md',
+  'WHY_TRACE.md',
+  'AI_ADOPTION.md',
+  'VISION.md',
+  'ROADMAP.md',
+  'ARCHITECTURE.md',
+  'CURRENT_MAINLINE_STATUS.md',
+  'RC3D_WORKSPACE_ENGINE.md',
+  'FEATURE_MATRIX.md',
+  'RELEASE_SHOWCASE.md',
+  'SCREENSHOTS.md',
   'API_EXAMPLES.md',
   'FOLDER_STRUCTURE.md',
-  'ENGINEERING_NOTES.md',
+  'ENGINEERING_DECISIONS.md',
   'PERFORMANCE.md',
   'SECURITY.md',
-  'FUTURE_WORK.md',
-  'CAREER_MAPPING.md'
+  'WHAT_THIS_PROVES.md',
+  'WHAT_THIS_DOES_NOT_CLAIM.md'
 ];
 const requiredAssets = [
-  'system-overview.png',
-  'architecture.png',
-  'runtime.png',
-  'deployment.png'
+  'screenshots/rc3d-goal-home-desktop.png',
+  'screenshots/rc3d-solution-recommendation-desktop.png',
+  'screenshots/rc3d-goal-home-mobile.png',
+  'architecture/rc3d-system-overview.svg',
+  'architecture/rc3d-system-overview.png',
+  'architecture/rc3d-workspace-flow.svg',
+  'architecture/rc3d-workspace-flow.png',
+  'release/rc3-release-timeline.svg',
+  'release/rc3-release-timeline.png'
 ];
 
 let failed = false;
@@ -61,6 +78,10 @@ function walk(dir) {
       const text = fs.readFileSync(full, 'utf8');
       const forbidden = [
         /C:[\\/]/i,
+        /\/Users\/trace/i,
+        /10\.8\.\d{1,3}\.\d{1,3}/,
+        /192\.168\.\d{1,3}\.\d{1,3}/,
+        /\.ssh[\\/]/i,
         /BEGIN (RSA|OPENSSH|PRIVATE) KEY/i,
         /private[_-]?key\s*[:=]/i,
         /secret\s*[:=]\s*['"][A-Za-z0-9_.-]{12,}['"]/i,
@@ -73,6 +94,21 @@ function walk(dir) {
           failed = true;
         }
       }
+      if (/\.md$/i.test(entry.name)) validateMarkdownLinks(full, relative, text);
+    }
+  }
+}
+
+function validateMarkdownLinks(fullPath, relativePath, source) {
+  const links = source.matchAll(/!?\[[^\]]*\]\(([^)]+)\)/g);
+  for (const match of links) {
+    const rawTarget = match[1].trim().replace(/^<|>$/g, '').split(/\s+["']/)[0];
+    if (!rawTarget || /^(?:https?:|mailto:|#)/i.test(rawTarget)) continue;
+    const target = decodeURIComponent(rawTarget.split('#')[0].split('?')[0]);
+    const resolved = path.resolve(path.dirname(fullPath), target);
+    if (!fs.existsSync(resolved)) {
+      console.error(`Broken local link in ${relativePath}: ${rawTarget}`);
+      failed = true;
     }
   }
 }

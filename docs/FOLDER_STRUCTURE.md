@@ -4,35 +4,30 @@
 .
 |-- README.md
 |-- LICENSE
-|-- .gitignore
-|-- .env.example
-|-- Dockerfile
-|-- docker-compose.yml
 |-- CONTRIBUTING.md
 |-- assets/
-|   |-- system-overview.png
-|   |-- architecture.png
-|   |-- runtime.png
-|   |-- deployment.png
-|   |-- screenshots/ or diagrams/
+|   |-- screenshots/
+|   |-- architecture/
+|   `-- release/
 |-- docs/
+|   |-- PORTFOLIO.md
+|   |-- PRODUCT.md
 |   |-- ARCHITECTURE.md
-|   |-- API_EXAMPLES.md
-|   |-- CAREER_MAPPING.md
-|   |-- ENGINEERING_NOTES.md
-|   |-- FOLDER_STRUCTURE.md
-|   |-- FUTURE_WORK.md
-|   |-- PERFORMANCE.md
-|   |-- SECURITY.md
-|   |-- WHAT_THIS_DOES_NOT_CLAIM.md
-|   |-- WHAT_THIS_PROVES.md
+|   |-- RC3D_WORKSPACE_ENGINE.md
+|   |-- FEATURE_MATRIX.md
+|   |-- RELEASE_SHOWCASE.md
+|   |-- CURRENT_MAINLINE_STATUS.md
+|   |-- AI_ADOPTION.md
+|   |-- ROADMAP.md
+|   |-- SCREENSHOTS.md
+|   `-- SECURITY.md
 |-- tools/
-|   |-- validate-repository.mjs
-|-- .github/
-|   |-- workflows/ci.yml
-|   |-- CODEOWNERS
-|   |-- pull_request_template.md
-|   |-- ISSUE_TEMPLATE/engineering-review.md
+|   `-- validate-repository.mjs
+`-- .github/
+    |-- workflows/ci.yml
+    |-- CODEOWNERS
+    |-- pull_request_template.md
+    `-- ISSUE_TEMPLATE/
 ```
 
-This structure is designed for public review. It keeps portfolio storytelling in the README while separating engineering evidence, diagrams, safety boundaries, and career mapping into reviewable files.
+This is a public engineering showcase. The private TRACE implementation is intentionally not mirrored into this repository.

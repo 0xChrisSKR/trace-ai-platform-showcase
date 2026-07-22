@@ -1,1 +1,1 @@
-Public-safe showcase of AI workflow orchestration, shared execution state, skill concepts, assistant/workspace UI, wallet-aware action boundaries, and technical validation.
+Public showcase of TRACE RC3D, a persistent AI workspace for goal-driven execution, Apps, memory, recommendations, and hybrid AI systems.
