@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">TRACE product flow</title>
+  <desc id="desc">A user goal moves through conversation, apps and connections, workspace, and a reviewable result.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07100f"/><stop offset="1" stop-color="#0a1720"/></linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#72e6b1"/></marker>
+    <style>.title{font:700 52px Arial,sans-serif;fill:#f4fbf8}.sub{font:400 23px Arial,sans-serif;fill:#9fb3ac}.num{font:700 16px Arial,sans-serif;fill:#07100f}.label{font:700 24px Arial,sans-serif;fill:#f4fbf8}.small{font:400 16px Arial,sans-serif;fill:#9fb3ac}.foot{font:400 18px Arial,sans-serif;fill:#8ca39b}.card{fill:#101d1a;stroke:#304b43;stroke-width:2}</style>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="80" y="92" class="title">TRACE AI Adoption Platform</text>
+  <text x="80" y="136" class="sub">From a goal to a saved, reviewable result without making the user assemble the AI stack</text>
+  <g stroke="#72e6b1" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M340 430H405"/><path d="M625 430H690"/><path d="M910 430H975"/><path d="M1195 430H1260"/>
+  </g>
+  <g>
+    <rect x="80" y="330" width="260" height="200" rx="8" class="card"/><circle cx="118" cy="370" r="18" fill="#72e6b1"/><text x="118" y="376" text-anchor="middle" class="num">1</text><text x="110" y="423" class="label">Describe a goal</text><text x="110" y="458" class="small">Start from the work,</text><text x="110" y="482" class="small">not model or tool setup.</text>
+    <rect x="405" y="330" width="220" height="200" rx="8" class="card"/><circle cx="443" cy="370" r="18" fill="#72e6b1"/><text x="443" y="376" text-anchor="middle" class="num">2</text><text x="435" y="423" class="label">Work in Chat</text><text x="435" y="458" class="small">Clarify the task and</text><text x="435" y="482" class="small">agree on the next step.</text>
+    <rect x="690" y="330" width="220" height="200" rx="8" class="card"/><circle cx="728" cy="370" r="18" fill="#72e6b1"/><text x="728" y="376" text-anchor="middle" class="num">3</text><text x="720" y="423" class="label">Use an App</text><text x="720" y="458" class="small">Connect data or approve</text><text x="720" y="482" class="small">only when required.</text>
+    <rect x="975" y="330" width="220" height="200" rx="8" class="card"/><circle cx="1013" cy="370" r="18" fill="#72e6b1"/><text x="1013" y="376" text-anchor="middle" class="num">4</text><text x="1005" y="423" class="label">Keep the work</text><text x="1005" y="458" class="small">Tasks, context, and</text><text x="1005" y="482" class="small">artifacts stay together.</text>
+    <rect x="1260" y="330" width="260" height="200" rx="8" class="card"/><circle cx="1298" cy="370" r="18" fill="#72e6b1"/><text x="1298" y="376" text-anchor="middle" class="num">5</text><text x="1290" y="423" class="label">Review and continue</text><text x="1290" y="458" class="small">Open the result, inspect</text><text x="1290" y="482" class="small">history, and resume later.</text>
+  </g>
+  <rect x="80" y="650" width="1440" height="88" rx="8" fill="#0f2220" stroke="#2f594d" stroke-width="2"/>
+  <text x="800" y="687" text-anchor="middle" class="label">Current RC candidate: Chat + Workspace + Apps + Account</text>
+  <text x="800" y="716" text-anchor="middle" class="small">Automatic solution recommendation and complete one-step configuration remain roadmap work.</text>
+  <text x="80" y="824" class="foot">Source-synchronized public showcase | 2026-07-22 | RC candidate, not a production claim</text>
+</svg>

@@ -1,7 +1,9 @@
 # 104 Project Summary
 
-TRACE AI Platform 是我的 AI workflow / runtime platform 公開展示專案，重點是呈現 AI Agent 工作流程、Skills、Workspace、Shared State、Memory、Review Trail、Policy、Receipt 與 Infrastructure 的產品與系統設計。這個公開版本不揭露私有原始碼與部署細節，而是用架構文件、介面截圖與技術決策說明我如何規劃 AI 平台。
+## TRACE AI Adoption Platform
 
-我負責產品方向、workflow 設計、平台架構、介面規劃、AI-assisted implementation 方向、技術審查與公開 GitHub 內容整理。此專案可驗證的內容包含 README、架構文件、engineering decisions、screenshots 與公開 artifact documents。
+TRACE 是一套仍在開發中的 AI 導入平台，目標是讓使用者從工作目標出發，不必先理解模型、Agent 或底層工具，就能透過對話開始工作，並將任務、結果、知識與執行紀錄保留在同一個工作區。目前 RC 候選版本已將產品收斂為 Chat、Workspace、Apps 與 Account 四個主要介面，並具備文件整理、研究、市場分析、App 安裝與啟用、有限度 Agent 執行、成果保存及阻塞狀態提示等實作。
 
-此專案不宣稱公開 production users、營收、客戶採用、排名或完整私有平台公開營運；它是用於 104、GitHub、LinkedIn 與面試的 AI platform architecture showcase。
+我負責產品方向、使用流程、系統邊界、架構規劃、AI 協作開發方向、程式檢視、測試驗證與公開內容整理。技術涵蓋 TypeScript、Next.js、React、assistant-ui、LangGraph、工作流程編排、外部服務整合、帳號權限、Workspace、Memory、Artifact 與執行紀錄。
+
+目前最新程式屬於 RC 候選版本，尚需完成乾淨建置、RC 發布與實際帳號瀏覽器驗證；不宣稱已全面取代正式網站，也不宣稱自動交易、錢包異動、付款啟用或完成機器人控制。

@@ -1,70 +1,73 @@
-# Current Mainline Status
+# Current Implementation Status
 
-This note keeps the public TRACE story aligned with current evidence without exposing private infrastructure, runtime code, deployment details, secrets, or RC1 internals.
+Audit date: 2026-07-22
 
-## Public-Safe Direction
+This page separates code present in the latest RC candidate from behavior proven on a deployed environment. It intentionally excludes private infrastructure details.
 
-TRACE is moving toward a Chat-first AI Agent Operating System.
+## Source Baseline
 
-The public-safe architecture is:
+| Source | Commit | Meaning |
+| --- | --- | --- |
+| Main branch | `f34a6002` | Public/product history baseline; not the newest RC work |
+| Historical RC release branch | `2a4fa9c` | Earlier release baseline |
+| Current RC candidate | `1a92fb01` | Latest implementation inspected for this showcase sync |
+
+The RC candidate is the newest implementation source. It is not presented as production. The candidate's own promotion gate records that clean dependency installation, a clean build, lint, local gates, RC promotion, and authenticated browser validation remain required.
+
+## Product Direction
+
+TRACE is moving from an architecture-led AI Agent OS prototype toward an AI adoption platform that starts with the user's work.
+
+The current product surfaces are:
 
 ```text
-Conversation
-  -> Planner
-  -> LangGraph Runtime
-  -> Capability Router
-  -> OSS Kernels
-  -> Skills
-  -> Memory
-  -> Proof
-  -> Conversation
+Chat -> Workspace -> Apps -> Account
 ```
 
-The goal is not to turn TRACE into another dashboard, exchange UI, or architecture-document collection. Conversation is the operating surface. The runtime composes existing kernels and private infrastructure capabilities behind that surface.
+Internally, the implementation resolves identity, connections, capabilities, workflow steps, execution, memory, and evidence. Those are system responsibilities, not concepts the user must learn first.
 
-## OSS Kernels Mentioned Publicly
+## Implemented In The Candidate
 
-- `assistant-ui` for the conversation UI direction.
-- LangGraph for runtime, planning, and workflow orchestration.
-- CCXT for exchange / market data abstraction.
-- WalletConnect / Reown for wallet session boundaries.
-- AgentKit for an approval-gated execution provider.
-- VPS-E-style durable memory / proof concept, without hostnames, IPs, topology, or private endpoint details.
-- Windows I5 as an engineering workstation / control point, without private network details.
+- Goal-led landing, onboarding, and Chat entry.
+- Account-owned workspace state for messages, tasks, results, memory, and artifacts.
+- App Center with install, enable, bind, test, invoke, and remove lifecycle paths.
+- Honest App states for available, setup-required, approval-required, and unavailable capabilities.
+- Bounded agent execution with blockers and approval decisions.
+- Document extraction paths for text, Markdown, CSV, TSV, image OCR, and PDF.
+- Task graphs for market analysis, wallet snapshot, portfolio review, document analysis, research, Gmail work, daily work, and proof recap.
+- Candidate background workflows for research, Gmail, Telegram, portfolio monitoring, Taiwan market work, GitHub monitoring, and daily work summaries.
+- Artifact and execution-history projection back into the active workspace.
+- Read-only wallet and exchange analysis boundaries, with mutation and execution kept separate.
 
-## Completed
+## Verified More Narrowly
 
-- Public-safe TRACE AI Platform showcase exists.
-- LangGraph is activated in the RC1 chat runtime path.
-- CCXT exchange kernel has been promoted as an OSS kernel direction.
-- WalletConnect / Reown wallet session kernel has been promoted as a wallet-boundary kernel direction.
-- AgentKit execution provider has been promoted with a human approval boundary.
-- Windows I5 SSH bastion was repaired and verified as an engineering control point.
-- Existing OSS kernels were found across the Windows I5 and VPS ecosystem.
-- Windows I5 / VPS capability recovery direction is documented here only as public-safe architecture.
+- The construction ledger records a completed real market-analysis product flow in the candidate.
+- Candidate tests cover capability lifecycle, attachment extraction, workspace artifacts, account ownership, and several background workflows.
+- The promotion candidate records passing TypeScript and regression tests at its preservation checkpoint.
 
-## In Progress
+These facts do not prove that every candidate workflow is deployed or that every external connection has passed authenticated browser validation.
 
-- Capability Router.
-- Kernel Composer.
-- BoxyHQ membership integration.
-- RIG persona integration.
-- mem0 / VPS-E memory consolidation decision.
-- Public site promotion.
-- Continuing the shift from hand-built RC1 surfaces toward OSS-kernel-backed Agent OS composition.
+## Promotion And Validation Still Required
 
-## Current Product Boundary
+- Clean dependency installation and production build from the candidate.
+- Full lint and candidate gate execution.
+- RC-only promotion through a verified release path.
+- Authenticated first-use, refresh, logout/login, reconnection, and owner-isolation browser tests.
+- Product validation for Gmail, Telegram, GitHub, portfolio, Taiwan market, and scheduled work under real account conditions.
+- Fresh screenshots from the promoted candidate.
 
-- RC1 remains an integration lab.
-- `c-chain.org` production remains public/stable and should not be described as fully replaced.
-- TRACE direction is Chat-first Agent OS, not dashboard-first product, exchange-first product, or random architecture pages.
+## Not Yet Implemented As A Complete Product Flow
 
-## Not Claimed
+- Automatic solution recommendation from an open-ended business goal.
+- One-step creation of a configured workspace with all required Apps.
+- Automatic activation of every external connection.
+- A fully validated public-site transition.
 
-- Finished trading execution.
-- Autonomous wallet mutation.
-- Completed GO2 ROS2 integration.
-- Production robotics deployment.
-- Low-altitude logistics deployment.
-- Public site fully replaced.
-- Production users, revenue, TVL, uptime, security audit, filed patent, or granted patent.
+## Locked Or Outside The Current Claim
+
+- Automatic trading execution.
+- Autonomous wallet mutation, signing, or transfer.
+- Live payment activation.
+- Private-key handling.
+- Completed GO2 ROS2 integration or deployed robot control.
+- Production users, revenue, uptime, or scale.

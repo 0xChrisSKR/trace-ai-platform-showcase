@@ -1,16 +1,14 @@
 # What This Does Not Claim
 
-This showcase does not claim:
+The latest implementation is an RC candidate. This showcase does not claim:
 
-- Public production users.
-- Revenue, customer adoption, uptime, latency, awards, or rankings.
-- Finished trading execution.
-- Autonomous wallet mutation.
-- Completed GO2 ROS2 integration.
-- Production robotics deployment.
-- Low-altitude logistics deployment.
-- Full replacement of the public c-chain.org site.
-- Public release of private implementation details.
-- That every line of code was manually typed by me.
-- Exposure of deployment, infrastructure, database, secrets, or proprietary implementation details.
-- Production operation of the full private platform.
+- That the candidate is the current public production build.
+- That every source-implemented App has passed authenticated browser UAT.
+- Automatic solution recommendation for every business goal.
+- Automatic trading, autonomous wallet mutation, signing, transfer, or custody.
+- Active payment processing.
+- Completed GO2 ROS2 integration or production robot control.
+- Production users, revenue, customer adoption, uptime, throughput, or audited security.
+- Public availability of the private implementation source.
+
+Historical work and research directions are described separately from current product capabilities.

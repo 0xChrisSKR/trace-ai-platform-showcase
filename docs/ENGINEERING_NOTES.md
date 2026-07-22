@@ -2,30 +2,36 @@
 
 ## Problem
 
-AI products need workflow continuity, shared state, review trails, and human-readable control surfaces beyond a single chat box.
+The implementation grew through several product eras: social surfaces, finance tools, runtime dashboards, agents, skills, and infrastructure control. The main engineering challenge is not adding another surface. It is converging those capabilities into one understandable work loop.
 
-## My Role
+## Current Convergence
 
-Product direction, workflow architecture, platform design, AI-assisted implementation direction, technical review, and public packaging.
+The latest RC candidate narrows the member product to:
 
-## Technical Decisions
+- Chat for intent and results.
+- Workspace for durable work state.
+- Apps for usable capabilities and setup.
+- Account for ownership, permissions, and connections.
 
-- Keep the repository public-safe: no private source code, private endpoints, infrastructure topology, secrets, or unverified claims.
-- Separate recruiter-facing explanation from engineering review material.
-- Add CI validation so the repository behaves like an engineering project rather than a static document dump.
-- Add Docker-based preview so reviewers can inspect the public package consistently.
-- Prefer PNG diagrams in the README for quick visual review, while keeping deeper architecture notes in docs.
+This convergence changes how the system is described publicly. Runtime, planner, registry, manifest, and provider details remain available for technical review but no longer define the first product explanation.
 
-## Engineering Challenges
+## Implementation Patterns
 
-- Presenting enough technical depth without exposing private systems.
-- Describing architecture evolution without implying production scale that is not publicly verifiable.
-- Making the project understandable to HR, hiring managers, and engineers from the same repository.
-- Keeping AI-assisted development claims honest and focused on architecture, validation, and delivery ownership.
+- Task graphs model bounded multi-step work.
+- Adapter boundaries separate product behavior from external services.
+- Account ownership is propagated through workspace, memory, artifacts, and history.
+- App readiness combines lifecycle state with connector and runtime health.
+- Consequential actions require a separate approval path.
+- Public responses are sanitized to remove internal provider and topology language.
 
-## Review Checklist
+## Current Challenges
 
-- Can a recruiter understand the project in less than three minutes?
-- Can an engineer find architecture, API examples, security notes, and deployment preview quickly?
-- Are all claims supported by public artifacts or clearly marked as design direction?
-- Are unsupported claims about users, revenue, scale, awards, or patents avoided?
+- The latest candidate is ahead of the historically identified RC base.
+- Some work paths are implemented and tested but not yet promoted and browser-validated.
+- Several older product routes still exist in source even though they are not part of the canonical journey.
+- External App readiness varies by account connection and provider health.
+- Fresh screenshots cannot be accepted until the promoted build matches the documented candidate.
+
+## Review Standard
+
+A feature is described as current only when the source path exists and its status is named accurately. Deployment, external connection, and production claims require separate evidence.

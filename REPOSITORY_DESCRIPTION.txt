@@ -1,1 +1,1 @@
-Public-safe showcase of AI workflow orchestration, shared execution state, skill concepts, assistant/workspace UI, wallet-aware action boundaries, and technical validation.
+Public showcase for TRACE, an AI adoption platform that turns goals into app-assisted work, persistent workspaces, and reviewable results.

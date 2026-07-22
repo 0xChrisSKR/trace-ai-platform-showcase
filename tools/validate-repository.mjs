@@ -16,8 +16,19 @@ const requiredRoot = [
   '.github/ISSUE_TEMPLATE/engineering-review.md'
 ];
 const requiredDocs = [
+  'PRODUCT.md',
+  'WHY_TRACE.md',
+  'AI_ADOPTION.md',
+  'VISION.md',
+  'ROADMAP.md',
+  'ARCHITECTURE.md',
+  'CURRENT_MAINLINE_STATUS.md',
+  'TRACE_SYNCHRONIZATION_REPORT.md',
+  'GAP_REPORT.md',
+  'SCREENSHOTS.md',
   'API_EXAMPLES.md',
   'FOLDER_STRUCTURE.md',
+  'ENGINEERING_DECISIONS.md',
   'ENGINEERING_NOTES.md',
   'PERFORMANCE.md',
   'SECURITY.md',
@@ -31,6 +42,13 @@ const requiredAssets = [
   'deployment.png'
 ];
 
+const requiredDiagramSources = [
+  'product-flow.svg',
+  'architecture.svg',
+  'runtime.svg',
+  'deployment.svg'
+];
+
 let failed = false;
 function requireFile(relativePath) {
   const full = path.join(root, relativePath);
@@ -42,6 +60,7 @@ function requireFile(relativePath) {
 for (const file of requiredRoot) requireFile(file);
 for (const file of requiredDocs) requireFile(path.join('docs', file));
 for (const file of requiredAssets) requireFile(path.join('assets', file));
+for (const file of requiredDiagramSources) requireFile(path.join('assets', 'diagrams', file));
 
 const forbiddenFileNames = ['.env', 'id_rsa', 'id_ed25519'];
 function walk(dir) {
@@ -73,6 +92,21 @@ function walk(dir) {
           failed = true;
         }
       }
+      if (/\.md$/i.test(entry.name)) validateMarkdownLinks(full, relative, text);
+    }
+  }
+}
+
+function validateMarkdownLinks(fullPath, relativePath, source) {
+  const links = source.matchAll(/!?\[[^\]]*\]\(([^)]+)\)/g);
+  for (const match of links) {
+    const rawTarget = match[1].trim().replace(/^<|>$/g, '').split(/\s+["']/)[0];
+    if (!rawTarget || /^(?:https?:|mailto:|#)/i.test(rawTarget)) continue;
+    const target = decodeURIComponent(rawTarget.split('#')[0].split('?')[0]);
+    const resolved = path.resolve(path.dirname(fullPath), target);
+    if (!fs.existsSync(resolved)) {
+      console.error(`Broken local link in ${relativePath}: ${rawTarget}`);
+      failed = true;
     }
   }
 }

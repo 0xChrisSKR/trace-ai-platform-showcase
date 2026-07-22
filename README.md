@@ -1,126 +1,131 @@
-# TRACE AI Platform Showcase
+# TRACE
 
 [![CI](https://github.com/0xChrisSKR/trace-ai-platform-showcase/actions/workflows/ci.yml/badge.svg)](https://github.com/0xChrisSKR/trace-ai-platform-showcase/actions/workflows/ci.yml)
+![Status](https://img.shields.io/badge/Status-RC%20candidate-f59e0b?style=flat-square)
+![Focus](https://img.shields.io/badge/Focus-AI%20adoption%20platform-2563eb?style=flat-square)
+![Claims](https://img.shields.io/badge/Claims-Source%20verified-16a34a?style=flat-square)
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Chris%20Chuang-0f172a?style=flat-square)](https://github.com/0xChrisSKR)
-![Status](https://img.shields.io/badge/Status-Public%20Showcase-7c3aed?style=flat-square)
-![Focus](https://img.shields.io/badge/Focus-AI%20Workflow%20Platform-2563eb?style=flat-square)
-![Claims](https://img.shields.io/badge/Claims-Verifiable%20Only-16a34a?style=flat-square)
+![TRACE product flow](assets/system-overview.png)
 
-![TRACE AI Platform cover](assets/screenshots/01-trace-ai-skills-tab.png)
+TRACE is an AI adoption platform in development. A user starts with a goal, works through conversation, and receives a result that stays connected to the same workspace, account, and execution history.
 
-TRACE AI Platform is where I collect my thinking about chat-first AI agent systems, runtime state, review trails, skills, workspace design, and infrastructure.
+This repository is the official public showcase. It contains product explanations, public-safe architecture, diagrams, and implementation status. It does not contain the private product source, credentials, deployment topology, or production configuration.
 
-The current TRACE mainline direction is a Chat-first Agent OS. Conversation is the interface; planning, LangGraph runtime flow, capability routing, OSS kernels, skills, memory, proof, and receipts sit underneath it.
+**Last synchronized:** 2026-07-22 against the latest RC candidate source at `1a92fb01`.
 
-This public showcase explains the direction without exposing private infrastructure, runtime code, deployment details, secrets, or RC1 internals. RC1 remains an integration lab, while the public c-chain.org site remains public/stable and should not be described as fully replaced.
+## What TRACE Is
 
-## One-line Positioning
+TRACE is not another standalone AI agent. It is designed to help people adopt AI without first learning models, agents, registries, or workflow infrastructure.
 
-Chat-first AI Agent OS showcase for conversation-led workflows, LangGraph-style orchestration, OSS kernel composition, shared execution state, review trails, and system integration.
+The current product loop is:
 
-## Problem
+```text
+Describe a goal
+  -> work with TRACE in Chat
+  -> use an available App or connection
+  -> keep tasks and results in Workspace
+  -> review the result and execution history
+  -> continue later from the same context
+```
 
-AI products should not become disconnected dashboards or isolated architecture pages. Once AI is used in real work, the important questions become how conversation turns into plans, how workflows execute, which capability is selected, how state is preserved, and how risky actions stay reviewable.
+The longer-term adoption flow adds automatic solution recommendation and configuration. Those steps remain roadmap work and are not presented here as complete.
+
+## Current Product Surfaces
+
+| Surface | What the user sees | Current source status |
+| --- | --- | --- |
+| Chat | A single place to describe work, clarify requirements, and receive results | Implemented in the RC candidate |
+| Workspace | Current work, tasks, active agent, artifacts, memory, and execution history | Implemented in the RC candidate |
+| Apps | Installed capabilities, connection requirements, setup state, and launch actions | Install, enable, bind, test, invoke, and remove lifecycle exists in the RC candidate |
+| Account | Identity, plan, permissions, connections, sessions, and safety boundaries | Implemented; some external connection flows still require RC validation |
+
+The source candidate also contains bounded workflows for document analysis, research, market analysis, account-owned background work, and read-only financial context. Availability depends on account state, connection health, permissions, and deployment validation.
+
+## Why It Exists
+
+Most AI tools stop at an answer. Real work also needs context, external services, task state, approval boundaries, saved results, and a way to resume later.
+
+TRACE brings those pieces into one product flow:
+
+- Start from the work, not the tool setup.
+- Ask for one connection or approval only when the task requires it.
+- Keep the user's account as the owner of work and history.
+- Show blockers instead of reporting false success.
+- Preserve useful results as artifacts that can be reviewed and continued.
+
+## Product Architecture
+
+![TRACE architecture](assets/architecture.png)
+
+The public architecture has four layers:
+
+1. **Product:** Chat, Workspace, Apps, and Account.
+2. **Orchestration:** intent understanding, workflow planning, capability selection, and approval gates.
+3. **Execution:** authorized Apps, connected services, document and data adapters, and bounded agent work.
+4. **Continuity:** workspace state, memory, artifacts, and execution history.
+
+Technical detail: [Architecture](docs/ARCHITECTURE.md)
+
+## Current Implementation Status
+
+### Implemented in the latest RC candidate
+
+- Goal-led Chat and onboarding paths.
+- Account-owned Workspace continuity across messages, tasks, results, memory, and artifacts.
+- App Center with lifecycle and honest readiness states.
+- Bounded agent execution with visible blockers and approval boundaries.
+- Document ingestion for text, Markdown, CSV, TSV, images with OCR, and PDF.
+- Market-analysis and proof-recap task graphs.
+- Candidate integrations for scheduled research, Gmail work, Telegram channels, GitHub monitoring, portfolio monitoring, Taiwan market work, and a daily work brief.
+
+### Still requiring validation or promotion
+
+- A clean RC build and promotion of the latest candidate.
+- Authenticated browser validation across first-use, refresh, reconnect, and account isolation.
+- End-to-end validation of every external App and background workflow.
+- Automatic solution recommendation and one-step workspace/App configuration.
+- Replacement of the current public site by the RC candidate.
+
+Detailed status: [Current implementation](docs/CURRENT_MAINLINE_STATUS.md)
+
+## Runtime Flow
+
+![TRACE runtime flow](assets/runtime.png)
+
+A task is allowed to proceed only when the required account, connection, capability, and approval state can be resolved. Otherwise TRACE returns a clear setup step or blocker. High-consequence actions remain outside the current public claim.
+
+## Technology
+
+The current implementation uses TypeScript, Next.js, React, assistant-ui, LangGraph, CCXT, WalletConnect/Reown, AgentKit, Supabase, Prisma, and adapter-based integrations. Each technology serves a bounded role; the user-facing product does not require users to understand the underlying runtime vocabulary.
 
 ## My Role
 
-I handled product direction, workflow design, platform architecture, interface planning, AI-assisted implementation direction, technical review, and GitHub packaging.
+I define the product direction, user workflows, system boundaries, and public narrative. I use AI coding systems during implementation, then read, review, modify, test, and validate the result. I am responsible for deciding what is complete, what remains experimental, and what can be stated publicly.
 
-## What It Includes
+## What Can Be Reviewed Here
 
-- AI workflow design
-- Chat-first interface direction
-- Planner and LangGraph runtime direction
-- Capability Router / Kernel Composer direction
-- Skills and workspace concepts
-- Shared execution state
-- Memory and review trail concepts
-- Policy and receipt concepts
-- Infrastructure and verification direction
-- Screenshots and architecture documentation
+- [Product](docs/PRODUCT.md)
+- [Why TRACE](docs/WHY_TRACE.md)
+- [AI adoption model](docs/AI_ADOPTION.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Vision](docs/VISION.md)
+- [Roadmap](docs/ROADMAP.md)
+- [Synchronization report](docs/TRACE_SYNCHRONIZATION_REPORT.md)
+- [Implementation/showcase gaps](docs/GAP_REPORT.md)
+- [Screenshot status and capture checklist](docs/SCREENSHOTS.md)
+- [Engineering decisions](docs/ENGINEERING_DECISIONS.md)
+- [Claim boundary](docs/WHAT_THIS_DOES_NOT_CLAIM.md)
 
-## Tech Stack
+## Public Demo
 
-- AI agent workflow design
-- Chat-first Agent OS architecture
-- LangGraph runtime / planning direction
-- OSS kernel composition
-- TypeScript / Next.js product surface
-- Runtime architecture
-- Workspace UI planning
-- Review trail and verification concepts
-- Infrastructure design
-
-
-## Engineering Assets
-
-![System overview](assets/system-overview.png)
-
-![Architecture](assets/architecture.png)
-
-![Runtime](assets/runtime.png)
-
-![Deployment](assets/deployment.png)
-
-- CI workflow: [.github/workflows/ci.yml](.github/workflows/ci.yml)
-- Deployment preview: [Dockerfile](Dockerfile), [docker-compose.yml](docker-compose.yml), [.env.example](.env.example)
-- API examples: [docs/API_EXAMPLES.md](docs/API_EXAMPLES.md)
-- Folder structure: [docs/FOLDER_STRUCTURE.md](docs/FOLDER_STRUCTURE.md)
-- Engineering notes: [docs/ENGINEERING_NOTES.md](docs/ENGINEERING_NOTES.md)
-- Performance notes: [docs/PERFORMANCE.md](docs/PERFORMANCE.md)
-- Security notes: [docs/SECURITY.md](docs/SECURITY.md)
-- Future work: [docs/FUTURE_WORK.md](docs/FUTURE_WORK.md)
-- Current mainline status: [docs/CURRENT_MAINLINE_STATUS.md](docs/CURRENT_MAINLINE_STATUS.md)
-- Reviewer notes: [docs/CAREER_MAPPING.md](docs/CAREER_MAPPING.md)
-
-## Local Deployment Preview
-
-```bash
-cp .env.example .env
-docker compose up --build
-```
-
-Open `http://localhost:8080` after the container starts. This preview serves the public showcase package only.
-
-The deployment preview is for repository review and portfolio evaluation. It does not expose private infrastructure, secrets, production topology, or private source code.
-
-## Public Artifacts
-
-- Architecture: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
-- Public artifacts: [docs/PUBLIC_ARTIFACTS.md](docs/PUBLIC_ARTIFACTS.md)
-- Visual artifacts: [docs/SCREENSHOTS.md](docs/SCREENSHOTS.md)
-- Lessons learned: [docs/LESSONS_LEARNED.md](docs/LESSONS_LEARNED.md)
-- 104 summary: [docs/104_PROJECT_SUMMARY.md](docs/104_PROJECT_SUMMARY.md)
-- What this proves: [docs/WHAT_THIS_PROVES.md](docs/WHAT_THIS_PROVES.md)
-- What this does not claim: [docs/WHAT_THIS_DOES_NOT_CLAIM.md](docs/WHAT_THIS_DOES_NOT_CLAIM.md)
-
-## Screenshots
-
-1. `assets/screenshots/01-trace-ai-skills-tab.png`
-2. `assets/screenshots/02-trace-ai-profile-list.png`
-3. `assets/screenshots/03-trace-workspace-terminal.png`
-
-## Relation to the Portfolio Narrative
-
-TRACE AI Platform is the latest point in my product evolution: WorldPeace DAO -> C-Chain Infrastructure -> Immune RPC Gate -> TRACE ProofFeed -> TRACE AI Platform.
-
-It shows how earlier Web3, verification, and infrastructure work evolved into a chat-first Agent OS direction that composes existing OSS kernels instead of rebuilding every capability from scratch.
+The full TRACE RC candidate is not presented here as a public production deployment. [TRACE ProofFeed](https://trace-prooffeed.vercel.app) is a separate public demo of the verification direction that informed TRACE's reviewable-result model.
 
 ## Related Projects
 
-- TRACE ProofFeed: https://github.com/TRACE-CChain-Labs/trace-prooffeed-solana-agent
-- Immune RPC Gate: https://github.com/0xChrisSKR/immune-rpc-gate
-- GO2 Agent Lab: https://github.com/0xChrisSKR/go2-agent-lab
+- [TRACE ProofFeed](https://github.com/TRACE-CChain-Labs/trace-prooffeed-solana-agent)
+- [Immune RPC Gate](https://github.com/0xChrisSKR/immune-rpc-gate)
+- [GO2 Agent Lab](https://github.com/0xChrisSKR/go2-agent-lab)
 
-## What A Reviewer Can Verify
+## Claim Boundary
 
-- The product surface through screenshots.
-- The architecture through diagrams and docs.
-- The current mainline story through `docs/CURRENT_MAINLINE_STATUS.md`.
-- The project scope through the claim boundary documents.
-- The portfolio relationship through the linked public repositories.
-
-## What This Does Not Claim
-
-This is a public showcase, not a production-user claim. I am not claiming revenue, uptime, customer adoption, finished trading execution, autonomous wallet mutation, production robotics deployment, or that every line was manually typed by me.
+This showcase does not claim production users, revenue, production-scale uptime, completed autonomous trading, autonomous wallet mutation, payment activation, deployed GO2 control, or full public-site replacement. The latest code is an RC candidate and remains subject to build, deployment, and authenticated product validation.

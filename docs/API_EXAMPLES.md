@@ -1,58 +1,37 @@
-# API Examples
+# API Boundary
 
-    This repository is a public showcase package. It does not expose a live product API. The examples below show how reviewers can fetch public artifacts and how the platform API boundary is intended to be discussed.
+This repository does not advertise a public production TRACE API. The examples below access public showcase artifacts only.
 
-    ## Public Artifact Requests
+## Public Showcase Artifacts
 
-    README request:
-
-    ```bash
-    curl -L "https://raw.githubusercontent.com/0xChrisSKR/trace-ai-platform-showcase/master/README.md"
-    ```
-
-    Architecture document request:
-
-    ```bash
-    curl -L "https://raw.githubusercontent.com/0xChrisSKR/trace-ai-platform-showcase/master/docs/ARCHITECTURE.md"
-    ```
-
-    Career mapping request:
-
-    ```bash
-    curl -L "https://raw.githubusercontent.com/0xChrisSKR/trace-ai-platform-showcase/master/docs/CAREER_MAPPING.md"
-    ```
-
-    Representative response shape:
-
-    ```json
-    {
-      "repository": "trace-ai-platform-showcase",
-      "artifact": "public engineering showcase",
-      "source": "https://github.com/0xChrisSKR/trace-ai-platform-showcase",
-      "claimBoundary": "verifiable public material only"
-    }
-    ```
-
-
-## Platform Boundary Example
-
-Request:
+README:
 
 ```bash
-curl -X POST "https://example.invalid/agent-workflow/run" \
-  -H "Content-Type: application/json" \
-  -d '{"workflow":"review-artifact","humanApprovalRequired":true}'
+curl -L "https://raw.githubusercontent.com/0xChrisSKR/trace-ai-platform-showcase/master/README.md"
 ```
 
-Response shape:
+Product status:
 
-```json
-{
-  "workflowState": "waiting-for-review",
-  "humanApprovalRequired": true,
-  "artifactVisible": true,
-  "claimBoundary": "public-showcase"
-}
+```bash
+curl -L "https://raw.githubusercontent.com/0xChrisSKR/trace-ai-platform-showcase/master/docs/CURRENT_MAINLINE_STATUS.md"
 ```
 
-This is a platform boundary example, not a deployed public API claim.
+Architecture:
+
+```bash
+curl -L "https://raw.githubusercontent.com/0xChrisSKR/trace-ai-platform-showcase/master/docs/ARCHITECTURE.md"
+```
+
+## RC Candidate Interface Families
+
+Source inspection confirms internal RC candidate interfaces for:
+
+- Conversation runtime.
+- Current workspace and conversation recovery.
+- Artifacts and execution history.
+- App catalog and install/enable/bind/test/invoke/remove lifecycle.
+- Active agent status and bounded execution.
+- Account connections and readiness.
+- Background work and automations.
+
+Route names, request bodies, and response contracts are not published here as a stable external API. They remain implementation interfaces until versioning, authentication, deployment, and public support boundaries are defined.

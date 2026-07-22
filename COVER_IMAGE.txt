@@ -1,1 +1,1 @@
-assets/screenshots/01-trace-ai-skills-tab.png
+assets/system-overview.png

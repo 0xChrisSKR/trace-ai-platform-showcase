@@ -1,7 +1,11 @@
-flowchart LR
-  User["User request"] --> Workspace["Assistant / workspace UI"]
-  Workspace --> Router["AI workflow routing"]
-  Router --> State["Shared execution state"]
-  State --> Skills["Skill / capability boundary"]
-  Skills --> Review["Review trail"]
-  Review --> Product["Product surface"]
+flowchart TB
+  Goal["User goal"] --> Chat["Chat"]
+  Chat --> Plan["Understand and plan"]
+  Plan --> Resolve["Resolve App, connection, and permission"]
+  Resolve --> Execute["Bounded execution"]
+  Execute --> Result["Result in Chat"]
+  Result --> Workspace["Workspace"]
+  Workspace --> Memory["Memory"]
+  Workspace --> Artifacts["Artifacts"]
+  Workspace --> History["Execution history"]
+  History --> Chat

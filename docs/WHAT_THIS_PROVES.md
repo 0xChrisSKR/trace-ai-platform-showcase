@@ -1,9 +1,14 @@
 # What This Proves
 
-TRACE AI Platform demonstrates:
+This public showcase demonstrates that I can:
 
-- AI platform and product architecture beyond a simple prompt interface.
-- Workflow design across skills, workspace, shared state, memory, review trails, policy, receipt, and infrastructure.
-- System integration thinking across product UI, runtime concepts, verification, and delivery.
-- Ability to direct AI-assisted implementation while retaining responsibility for architecture, review, and validation.
-- Ability to explain private-origin platform work publicly without exposing source code or deployment details.
+- Turn a large, evolving codebase into a smaller and clearer product model.
+- Design an AI work loop across conversation, Apps, workspace state, memory, artifacts, and review history.
+- Separate account ownership from wallets and external service connections.
+- Use workflow graphs and adapter boundaries to coordinate multi-step work.
+- Keep consequential actions behind explicit approval and honest blocker states.
+- Distinguish source implementation, automated tests, RC validation, and production claims.
+- Translate private implementation work into public-safe architecture without exposing source, credentials, or topology.
+- Direct AI-assisted implementation while retaining responsibility for product decisions, code review, testing, and public claims.
+
+The synchronization report identifies the exact source baseline used for these statements.
